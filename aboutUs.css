@@ -1,0 +1,179 @@
+/* ======= class ======== */
+.class {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6em; 
+    background-color: #F9EFDE;
+    color: #614D3B;
+}
+
+.class-text {
+    font-family: "Kiwi Maru", serif;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 4em;
+}
+.class-text h1 {
+    font-size: 42px;
+    margin-bottom: 1em;
+}
+.class-text h2 {
+    font-size: 24px;
+}
+
+
+.class-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.card-text {
+    font-family: "Kiwi Maru", serif;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 30px 1em;
+}
+.class-card {
+    background-color: #FDF9F2;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    flex: 1;
+    padding: 2em 0;
+    transition: 3s;
+}
+.class-card:hover {
+    border: 1px solid #854D0E;
+    transition: 3s;
+}
+.class-card:hover .class-btn {
+    background-color: #854D0E;
+    color: #FDF9F2;
+    transition: 0.5s;
+}
+
+.class-btn {    
+    font-family: "Kiwi Maru", serif;
+    border-radius: 24px;
+    color: #614D3B;
+    background-color: #F3CDB5;
+}
+.class-btn a {
+    font-size: 24px;
+    display: inline-block;
+    padding: 0.5em 2.5em;
+}
+
+
+
+
+
+/* ======== teacher ========== */
+.teacher {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8em;
+    background-color: #D5B082;
+}
+
+.teacher-container {
+    min-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.teacher-card {
+    display: grid;
+    grid-template-columns: auto 1fr;/* 左側人物區塊自動寬度，右側文本佔滿剩餘空間 */
+    grid-template-rows: auto;
+    gap: 60px;
+}
+
+.teacher-pic {
+    grid-column:  1 / 2;
+    grid-row: 1 / 2;
+    position: relative;
+}
+.teacher-name {
+    position: absolute;
+    right: 0;
+    background-color: #F9EFDE;
+    padding: 10px;
+    border-radius: 8px;
+    color: #854D0E;
+    font-size: 20px;
+    white-space: nowrap;
+    z-index: 2;
+}
+.teacher-text {
+    font-family: "Kiwi Maru", serif;
+    color: #614D3B;
+    font-size: 20px;
+    line-height: 1.6;
+    background-color: #F7EFE6;
+    padding: 2em;
+    border-radius: 24px;
+}
+
+
+
+
+
+/* ========== environment =========== */
+        .environment {
+            display: grid;            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr); /* 三列等寬 */
+            
+            background-color: #F9EFDE;
+        }
+
+        .e1 {
+            grid-row: 1 / 2; 
+            grid-column: 1 / 2; 
+        }
+        .e2 {
+            grid-row: 1 / 2; 
+            grid-column: 2 / 3; 
+        }
+        .e3 {
+            grid-row: 1 / 2; 
+            grid-column: 3 / 4; 
+        }
+
+        .environment-text {
+            grid-row: 2 / 4;
+            grid-column: 1 / 3; 
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            padding: 0 1em 0 10em;
+            font-family: "Kiwi Maru", serif;
+            color: #614D3B;
+        }
+
+        .environment-text h2 {
+            font-size: 30px;
+            margin-bottom: 1em;
+        }
+        .environment-text p {
+            font-size: 24px;
+            line-height: 1.6;
+        }
+
+        .e4 {
+            grid-row: 2 / 3;
+            grid-column: 3 / 4;
+        }
+        .e5 {
+            grid-row: 3 / 4;
+            grid-column: 3 / 4;
+        }

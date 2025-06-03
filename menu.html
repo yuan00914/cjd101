@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .menu-nav {
+            background-color: #F3CDB5;
+            margin-bottom: 6em;
+        }
+        .menu-list {
+            font-family: "Kiwi Maru", serif;
+            color: #614D3B;
+            font-size: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .menu-item {
+            width: 300px;
+            padding: 1em;
+            text-align: center;
+        }
+        .menu-item:hover {
+            color: #F9EFDE;
+            background-color: #614D3B;
+        }
+
+        .menu-card-list {    
+            width: 1200px;        
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            margin-bottom: 6em;
+            gap: 90px 30px;
+        }
+        .menu-card-item {
+            width: 270px;background-color: #fff;
+            border-radius: 12px;
+            transition: .3s;
+        }
+        .menu-card-item:hover {
+            transform: scale(1.05);
+            transition: .3s;            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .menu-card-pic {
+            height: 200px;
+        }
+        .menu-card-pic img{
+            width: 100%;
+            overflow: hidden;
+        }
+        .menu-card-text {
+            font-family: "Kiwi Maru", serif;
+            color: #614D3B;
+            font-size: 24px;
+            padding: 1em;
+        }
+        .menu-card-text p {
+            font-size: 20px;
+            color: #F35C2F;
+        }
+    </style>
+</head>
+<body>
+<!-- ========== header ========== -->
+    <div class="header">
+        <div class="header-container">
+            <nav class="header-nav">
+                <div class="logo">
+                    <a href="index.html"><img src="pic/logo.png" alt="logo"></a>
+                </div>
+                <ul class="header-list">
+                    <li class="header-items">
+                        <a href="#">人氣課程</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="menu.html">所有課程</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="aboutUs.html">關於我們</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="#">我要預約</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="#">常見問題</a>
+                    </li>
+                </ul>
+                <div class="member-icon">
+                    <a href="logIn.html"><img src="pic/icon/member_icon.svg" alt="member"></a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+<!-- ========== main ========== -->
+    <div class="menu">
+        <img src="pic/banner2.svg" alt="menu_banner" class="menu-banner">
+    </div>
+    <nav class="menu-nav">
+        <ul class="menu-list">
+            <a href="#"><li class="menu-item">全部課程</li></a>
+            <a href="#"><li class="menu-item">季節限定體驗</li></a>
+            <a href="#"><li class="menu-item">新手領航系列</li></a>
+            <a href="#"><li class="menu-item">名師進修班</li></a>
+        </ul>
+    </nav>
+    <div class="menu-card-list">
+        <a href="#"><div class="menu-card-item">
+            <div class="menu-card-pic">
+                <img src="pic/menu/mother2.svg" alt="cake">
+            </div>
+            <div class="menu-card-text">
+                <h2>康乃馨翻糖蛋糕</h2>
+                <p>NT$ 1500</p>
+            </div>
+        </div></a>
+        <a href="#"><div class="menu-card-item">
+            <div class="menu-card-pic">
+                <img src="pic/menu/biscuite2.svg" alt="cake">
+            </div>
+            <div class="menu-card-text">
+                <h2>可愛造型餅乾彩繪</h2>
+                <p>NT$ 850</p>
+            </div>
+        </div></a>
+        <a href="#"><div class="menu-card-item">
+            <div class="menu-card-pic">
+                <img src="pic/menu/fruittart2.svg" alt="cake">
+            </div>
+            <div class="menu-card-text">
+                <h2>繽紛熱帶水果塔</h2>
+                <p>NT$ 1300</p>
+            </div>
+        </div></a>
+        <a href="#"><div class="menu-card-item">
+            <div class="menu-card-pic">
+                <img src="pic/menu/madeleine2.svg" alt="cake">
+            </div>
+            <div class="menu-card-text">
+                <h2>法式瑪德蓮&費南雪</h2>
+                <p>NT$ 1200</p>
+            </div>
+        </div></a>
+        <a href="#"><div class="menu-card-item">
+            <div class="menu-card-pic">
+                <img src="pic/menu/present2.svg" alt="cake">
+            </div>
+            <div class="menu-card-text">
+                <h2>香酥手工餅乾禮盒</h2>
+                <p>NT$ 800</p>
+            </div>
+        </div></a>
+        <a href="#"><div class="menu-card-item">
+            <div class="menu-card-pic">
+                <img src="pic/menu/chiffon2.svg" alt="cake">
+            </div>
+            <div class="menu-card-text">
+                <h2>經典原味戚風蛋糕</h2>
+                <p>NT$ 800</p>
+            </div>
+        </div></a>
+        <a href="#"><div class="menu-card-item">
+            <div class="menu-card-pic">
+                <img src="pic/menu/pudding2.svg" alt="cake">
+            </div>
+            <div class="menu-card-text">
+                <h2>焦糖烤布丁</h2>
+                <p>NT$ 750</p>
+            </div>
+        </div></a>
+        <a href="#"><div class="menu-card-item">
+            <div class="menu-card-pic">
+                <img src="pic/menu/daifuku2.svg" alt="cake">
+            </div>
+            <div class="menu-card-text">
+                <h2>日式和風大福</h2>
+                <p>NT$ 700</p>
+            </div>
+        </div></a>
+        <a href="#"><div class="menu-card-item">
+            <div class="menu-card-pic">
+                <img src="pic/menu/cheese2.svg" alt="cake">
+            </div>
+            <div class="menu-card-text">
+                <h2>日式輕乳酪蛋糕</h2>
+                <p>NT$ 1100</p>
+            </div>
+        </div></a>
+        <a href="#"><div class="menu-card-item">
+            <div class="menu-card-pic">
+                <img src="pic/menu/bread2.svg" alt="cake">
+            </div>
+            <div class="menu-card-text">
+                <h2>健康歐式麵包(免揉)</h2>
+                <p>NT$ 1100</p>
+            </div>
+        </div></a>
+        <a href="#"><div class="menu-card-item">
+            <div class="menu-card-pic">
+                <img src="pic/menu/cup2.svg" alt="cake">
+            </div>
+            <div class="menu-card-text">
+                <h2>造型杯子蛋糕</h2>
+                <p>NT$ 950</p>
+            </div>
+        </div></a>
+    </div>
+
+
+    
+    <!-- ========== footer ========== -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-social">
+                <a href="#"><img src="pic/fb.svg" alt="FB" class="footer-fb"></a>
+                <a href="#"><img src="pic/ig.svg" alt="IG" class="footer-ig"></a>
+                <a href="#"><img src="pic/line.svg" alt="Line" class="footer-line"></a>
+            </div>
+            <div class="copyright">
+                &copy; Copyright 2019. Laaqiq All Right Reserved<br>本網站為緯育TibaMe前端工程師班學員專題作品，本平台僅供學習、展示之用。
+            </div>
+        </div>
+    </div>
+</body>
+</html>

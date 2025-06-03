@@ -1,0 +1,234 @@
+
+        /* ======== banner ========*/
+        .banner {
+            background: #F9EFDE url(pic/banner.svg) no-repeat center / cover;
+        }
+        .banner-container {
+            width: 1000px;
+            min-height: 100vh;
+            margin: auto;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+        .banner-txt {
+            font-family: "Kiwi Maru", serif;
+            letter-spacing: 0.1em;
+            color: #614D3B;
+        }
+        .banner-txt h1 {
+            font-size: 42px;
+            padding-bottom: 1em;
+        }
+        .banner-txt p {
+            font-size: 20px;
+        }
+
+
+
+
+
+        /* ======== hot ========*/
+.hot {
+    background-color: #F9EFDE;
+    padding: 6rem 0 12rem;
+    position: relative;
+}
+.hot-dec {
+    position: absolute;
+    bottom: 0;
+}
+
+.hot-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.hot-title {
+    min-width: 900px;
+    font-family: "Kiwi Maru", serif;
+    letter-spacing: 0.1em;
+    color: #614D3B;
+    position: relative;
+} 
+
+.hot-text h1 {
+    font-size: 36px;
+    margin-bottom: 1em;
+}
+
+.hot-text h2 {
+    font-size: 20px;
+}
+
+.hot-button {
+    font-family: "Kiwi Maru", serif;
+    width: 60px;
+    height: 60px;
+    background-color: #FBBD60;
+    color: #614D3B;
+    border-radius: 50%;
+    padding: 1em;
+    font-size: 24px;
+    box-shadow: -4px 4px 0 0.5px rgba(183, 131, 89, 1); 
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+    transition: 0.3s; 
+}
+.hot-button:hover {
+    background-color: #ED977D;
+    transform: translateY(-10px); 
+    transition: 0.3s; 
+}
+
+.hot-list {
+    display: flex; 
+    gap: 40px; 
+}
+
+.hot-class {
+    width: 300px;
+    background-color: #fff; 
+    color: #614D3B;
+    border-radius: 24px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    transition: 0.3s; 
+}
+.hot-class:hover {
+    transform: translateY(-10px); 
+    transition: 0.3s; 
+}
+
+.hot-class img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover;
+}
+
+.hot-pic-text {
+    font-family: "Kiwi Maru", serif;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    font-size: 20px;
+    line-height: 1.6;
+    gap: 15px;
+}
+.hot-pic-text h3 {
+    font-size: 24px;
+}
+
+.hot-view-button {
+    width: 60px;
+    align-self: center;
+    padding: 1em;
+}
+.hot-view-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+}
+
+
+
+
+        /* ======== hot ========*/
+.us {
+    background: url(pic/bgicon.svg) no-repeat center / cover;
+    padding: 8rem 0 0 0;
+}
+.us-container {
+    display: grid;
+    width: 1000px;
+    height: 750px;
+    grid-template-rows: 10% 300px 10% 10%;
+    grid-template-columns: 5fr 6fr 6fr 6fr 3fr 9fr 3fr 3fr 2fr;
+    margin: auto;
+}
+.us-pic {
+    grid-row: 2 / 4;
+    grid-column: 2 / 5;
+}
+.us-icon {
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+}
+.us-box {
+    background-color: #F2E7D9;
+    border-radius: 24px;
+    grid-row: 1 / -1;
+    grid-column:  4 / -1;
+}
+.us-text {
+    grid-row: 2 / 3;
+    grid-column: -5 / -2;
+    font-family: "Kiwi Maru", serif;
+    font-size: 20px;
+    color: #614D3B;
+    border-radius: 24px;
+}
+
+.us-text h2 {
+    font-size: 36px;
+    margin-bottom: 1em;
+}
+.us-text p {
+    margin-bottom: 1em;
+}
+
+.us-button {
+    grid-row: -2 / -1;
+    grid-column: -3 /-2;
+    font-family: "Kiwi Maru", serif;
+    width: 60px;
+    height: 60px;
+    background-color: #FBBD60;
+    color: #614D3B;
+    border-radius: 50%;
+    padding: 1em;
+    font-size: 24px;
+    box-shadow: -4px 4px 0 0.5px rgba(183, 131, 89, 1); 
+    transition: 0.3s; 
+}
+.us-button:hover {
+    background-color: #ED977D;
+    transform: translateY(-10px); 
+    transition: 0.3s; 
+}
+
+
+
+
+        /* ======== contact ========*/
+.contact {
+    padding: 6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-container {
+    min-width: 1200px;
+    display: flex;
+    flex-direction: center;
+    justify-content: space-evenly;
+}
+.contact-text{
+    font-family: "Kiwi Maru", serif;
+    color: #614D3B;
+    font-size: 20px;
+    line-height: 1.6;
+}
+.contact-text h2 {
+    font-size: 36px;
+    margin-bottom: 1em;
+}
+.map {
+    align-self: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 4px 4px 0 1px #ED977D;
+}

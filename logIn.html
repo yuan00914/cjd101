@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員登入</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box {
+            width: 100%;
+            height: 120px;
+            background-color: #D5B082;
+        }
+
+        .form {
+            font-family: "Noto Sans TC", sans-serif;
+            background-color: #FEFCF8;
+            color: #614D3B;
+            border-radius: 12px;
+            padding: 1em 4em;
+            margin: 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px #ccc;
+        }
+        .form h2 {
+            width: 100%;
+            font-size: 24px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #614D3B;
+            text-align: center;
+        }
+
+        .form label {
+            font-size: 14px;
+            line-height: 2;
+            text-align: start;
+        }
+        .form input {
+            border: 1px solid #D1D5DB;
+            border-radius: 4px;
+            padding: 10px 2em;
+        }
+        .login-group {
+            margin-bottom: 10px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+        .btn-group p {
+            font-size: 16px;
+            text-align: center;
+        }
+        .login-btn {
+            background-color: #614D3B;
+            color: #F9EFDE;
+            border-radius: 4px;
+            padding: 10px 2em;
+            letter-spacing: 0.1em;
+        }
+        .login-fb {
+            background-color: #4267B2;
+            color: #F9EFDE;
+            border-radius: 4px;
+            padding: 10px 2em;
+            letter-spacing: 0.1em;
+        }
+        .login-line {
+            background-color: #319F43;
+            color: #F9EFDE;
+            border-radius: 4px;
+            padding: 10px 2em;
+            letter-spacing: 0.1em;
+        }
+        .attention {
+            font-size: 14px;
+            text-align: center;
+        }
+        .login-text {
+            font-size: 14px;
+            color: #F35C2F;
+            text-align: center;
+            margin-bottom: 2em;
+        }
+    </style>
+</head>
+<body>
+<!-- ========== header ========== -->
+    <div class="header">
+        <div class="header-container">
+            <nav class="header-nav">
+                <div class="logo">
+                    <a href="index.html"><img src="pic/logo.png" alt="logo"></a>
+                </div>
+                <ul class="header-list">
+                    <li class="header-items">
+                        <a href="#">人氣課程</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="menu.html">所有課程</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="aboutUs.html">關於我們</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="#">我要預約</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="#">常見問題</a>
+                    </li>
+                </ul>
+                <div class="member-icon">
+                    <a href="logIn.html"><img src="pic/icon/member_icon.svg" alt="member"></a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+<!-- ========== main ========== -->
+    <div class="login">
+        <div class="box"></div>
+        <form class="form">
+            <h2>會員登入</h2>
+            <div class="login-group">
+                <label for="user-id">您的手機號碼就是會員帳號</label><br>
+                <input type="text" placeholder="輸入手機帳號" id="user-id">
+            </div>
+            <div class="btn-group">
+                <button class="login-btn">登入/註冊</button>
+                <p>──── 或 ────</p>
+                <button class="login-fb">使用Facebook快速登入</button>
+                <button class="login-line">使用LINE快速登入</button>
+            </div>
+            <div class="attention">
+                <p>擁有帳號即表示您同意<br>會員權益聲明 與 隱私權及網站條款</p>
+            </div>
+        </form>
+        <p class="login-text">提醒您：我們不會以電話或簡訊通知變更付款方式，也不會要您前往ATM進行任何操作。<br>若有任何疑慮，請洽詢165反詐騙專線。</p>
+    </div>
+
+
+    
+    <!-- ========== footer ========== -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-social">
+                <a href="#"><img src="pic/fb.svg" alt="FB" class="footer-fb"></a>
+                <a href="#"><img src="pic/ig.svg" alt="IG" class="footer-ig"></a>
+                <a href="#"><img src="pic/line.svg" alt="Line" class="footer-line"></a>
+            </div>
+            <div class="copyright">
+                &copy; Copyright 2019. Laaqiq All Right Reserved<br>本網站為緯育TibaMe前端工程師班學員專題作品，本平台僅供學習、展示之用。
+            </div>
+        </div>
+    </div>
+</body>
+</html>
