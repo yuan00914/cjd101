@@ -419,6 +419,7 @@
 }
 .contact-text h2 {
     font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 .map {
     align-self: center;
@@ -440,11 +441,11 @@
     .contact-container {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
     }
     .contact-text {
         text-align: center;
         white-space: nowrap;
+        flex: none;
     }
     .contact-text h2 {
         font-size: 2rem;
@@ -464,6 +465,9 @@
     .contact {
         padding: 4rem 0 0;
     }
+    .contact-container {
+        gap: 10px;
+    }
     .contact-text{
         margin: 0 10px;
     }
@@ -471,6 +475,6 @@
         font-size: 1.5rem;
     }
     .contact-text p {
-        font-size: .5rem;
+        font-size: .9rem;
     }
 }
