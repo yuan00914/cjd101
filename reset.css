@@ -227,6 +227,10 @@ h1, h2, h3, h4, h5, h6 {
 
         @media (max-width: 568px) {
             .footer {
-                padding: 14em 0 .5rem;
+                padding: 14rem 0 .5rem;
+            }
+            .copyright {
+                font-family: "Noto Sans TC", sans-serif;
+                font-size: .7rem;
             }
         }
