@@ -6,9 +6,6 @@
     <title>可愛造型餅乾彩繪</title>
     <link rel="stylesheet" href="reset.css">
     <style>
-        body, html {
-            min-height: 100%;
-        }
         .course {
             padding: 10em 0;
         }
@@ -100,16 +97,13 @@
                 </div>
                 <ul class="header-list">
                     <li class="header-items">
-                        <a href="#">人氣課程</a>
-                    </li>
+                        <a href="#">最新消息</a>
+                    </li>   
                     <li class="header-items">
                         <a href="menu.html">所有課程</a>
                     </li>
                     <li class="header-items">
                         <a href="aboutUs.html">關於我們</a>
-                    </li>
-                    <li class="header-items">
-                        <a href="#">我要預約</a>
                     </li>
                     <li class="header-items">
                         <a href="#">常見問題</a>
@@ -118,12 +112,21 @@
                 <div class="member-icon">
                     <a href="logIn.html"><img src="pic/icon/member_icon.svg" alt="member"></a>
                 </div>
+
+                <div class="hamburger-menu">
+                    <img src="pic2/hamburger.svg" alt="hamburger">
+                </div>
             </nav>
         </div>
+
+        <ul class="mobile-nav">
+            <li class="header-items"><a href="logIn.html">會員登入</a></li>
+            <li class="header-items"><a href="#">最新消息</a></li>
+            <li class="header-items"><a href="menu.html">所有課程</a></li>
+            <li class="header-items"><a href="#">關於我們</a></li>
+            <li class="header-items"><a href="#">常見問題</a></li>
+        </ul>
     </div>
-
-
-
 
 
     <!-- ======= main ========= -->
@@ -135,6 +138,8 @@
                     <a href="menu.html"><li class="course-item">全部課程</li></a>
                     <li class="course-item"> / </li>
                     <a href="#">名師進修班</a>
+                    <li class="course-item"> / </li>
+                    <a href="#">可愛造型餅乾彩繪</a>
                 </ul>
             </div>
             <div class="course-pic">
@@ -149,9 +154,9 @@
             </div>
             <div class="course-intro">
                 <div class="course-tag">
-                    <span class="tag">蛋奶素</span>
-                    <span class="tag">2小時</span>
-                    <span class="tag">老師教學</span>                    
+                    <span class="tag"><img src="pic2/icon/lactoVegetarian.svg" alt="Veg">蛋奶素</span>
+                    <span class="tag"><img src="pic2/icon/time.svg" alt="time">2小時</span>
+                    <span class="tag"><img src="pic2/icon/teach.svg" alt="teacher">老師教學</span>                    
                 </div>
                 <p>產品特色<br>主體：抹茶餅乾<br>內餡：白巧克力<br>裝飾：巧克力<br>尺寸約：直徑5.5cm、高1.5cm<br>🎁附手提紙盒一個 (12片裝一起)<br><br>保存方式<br>常溫保存，並保持密封乾燥。<br>（建議放入保鮮盒或夾鏈袋）<br>於7天內食用完，口感較佳。</p>
             </div>            
@@ -175,5 +180,8 @@
             </div>
         </div>
     </div>
+
+
+    <script src="hamburger.js"></script>
 </body>
 </html>

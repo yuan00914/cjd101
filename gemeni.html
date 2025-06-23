@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* ======= class ======== */
+.Banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    /* 確保在桌面版顯示 */
+}
+
+.mobileBanner {
+    display: none; /* 預設隱藏，在手機版顯示 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+/* ======= class ======== */
+.class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6em 1em;
+    color: #614D3B;
+    position: relative;
+    overflow: hidden;
+    /* 如果希望波浪圖覆蓋在一個固定的背景色上，可以在這裡設定 */
+    background-color: #F9EFDE; /* 假設這是您想讓波浪圖「遮住」後顯示的顏色 */
+}
+
+.slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* 將其 z-index 設為 0，讓其在內容下方，但在 .class 的背景色之上 */
+}
+
+.slider-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    /* 如果波浪圖是作為mask-image，則需要不同的屬性 */
+    /* 以下是如果波浪圖是單獨的背景圖片，通過透明度變化來模擬遮罩效果 */
+}
+
+.slider-item.active {
+    opacity: 1;
+}
+
+/* 確保內容在輪播圖之上 */
+.class-container {
+    position: relative;
+    z-index: 1; /* 確保內容在波浪圖之上 */
+}
+
+.class-text {
+    font-family: "Kiwi Maru", serif;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 4em;
+    max-width: 900px;
+    padding: 0 1em;
+    position: relative;
+    z-index: 2; /* 確保文本在輪播圖片之上，z-index 比 class-container 更高 */
+}
+
+/* 媒體查詢保持不變，因為它們只影響輪播的顯示方式，不影響其「遮色片」本質 */
+/* ... 媒體查詢部分，請參考上次提供的代碼 ... */
+
+.class-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+}
+
+.class-text h2 {
+    font-size: 1.5rem;
+}
+
+.class-list {
+    display: flex;
+    flex-wrap: wrap; /* 允許卡片換行 */
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px; /* 限制卡片列表寬度 */
+}
+
+.card-text {
+    font-family: "Kiwi Maru", serif;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 30px 1em;
+}
+
+.class-card {
+    background-color: #FDF9F2;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    flex: 1 1 300px; /* 讓卡片在空間不足時換行，並設定最小寬度 */
+    padding: 2em 0;
+    min-width: 280px; /* 確保在小螢幕下有足夠寬度 */
+}
+
+.class-card:hover {
+    outline: 1px solid #854D0E;
+    transition: 0.3s ease; /* 調整過渡時間，讓效果更流暢 */
+}
+
+.class-card:hover .class-btn {
+    background-color: #854D0E;
+    color: #FDF9F2;
+    transition: .5s;
+}
+
+.class-btn {
+    font-family: "Kiwi Maru", serif;
+    border-radius: 24px;
+    color: #614D3B;
+    background-color: #F3CDB5;
+    white-space: nowrap; /* 防止按鈕文字換行 */
+}
+
+.class-btn a {
+    font-size: 24px;
+    display: inline-block;
+    padding: 0.5em 2.5em;
+}
+
+
+/* ======== teacher ========== */
+.teacher {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8em 1em; /* 調整左右內距 */
+    background-color: #D5B082;
+}
+
+.teacher-container {
+    max-width: 1200px; /* 使用 max-width 而非 min-width */
+    width: 100%; /* 確保容器佔滿可用寬度 */
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center; /* 讓卡片在中央對齊 */
+}
+
+.teacher-card {
+    display: flex; /* 改為 flex 佈局 */
+    flex-direction: row; /* 預設水平排列 */
+    align-items: flex-start; /* 頂部對齊 */
+    gap: 60px;
+    background-color: #F7EFE6; /* 將背景色設置在這裡 */
+    padding: 2em; /* 增加內距 */
+    border-radius: 24px;
+    width: 100%; /* 確保卡片佔滿容器寬度 */
+    max-width: 900px; /* 限制卡片最大寬度 */
+}
+
+.teacher-pic {
+    position: relative;
+    flex-shrink: 0; /* 防止圖片縮小 */
+    width: 250px; /* 給予固定寬度 */
+    height: 250px; /* 給予固定高度 */
+    border-radius: 50%; /* 變成圓形 */
+    overflow: hidden; /* 隱藏超出圓形的部分 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teacher-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持圖片比例並填滿容器 */
+}
+
+.teacher-name {
+    position: absolute;
+    right: 0;
+    bottom: 0; /* 將名字放在圖片底部 */
+    background-color: #F9EFDE;
+    padding: 10px;
+    border-radius: 8px;
+    color: #854D0E;
+    font-size: 20px;
+    white-space: nowrap;
+    z-index: 2;
+    transform: translateX(30%); /* 微調位置 */
+}
+
+.teacher-card:nth-child(even) .teacher-pic {
+    order: 1; /* 偶數卡片圖片靠右 */
+}
+
+.teacher-card:nth-child(even) .teacher-text {
+    order: 0; /* 偶數卡片文字靠左 */
+}
+
+.teacher-card:nth-child(even) .teacher-name {
+    left: 0; /* 偶數卡片名字靠左 */
+    right: auto;
+    transform: translateX(-30%); /* 微調位置 */
+}
+
+
+.teacher-text {
+    font-family: "Kiwi Maru", serif;
+    color: #614D3B;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    flex-grow: 1; /* 讓文字部分佔滿剩餘空間 */
+}
+
+
+/* ========== environment =========== */
+.environment {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* 垂直居中對齊 */
+    gap: 30px;
+    padding: 4em 1em; /* 調整整體內距 */
+}
+
+.classroom {
+    flex: 1 1 500px; /* 讓圖片在空間不足時換行，並設定最小寬度 */
+    max-width: 600px; /* 限制圖片最大寬度 */
+    margin: 0; /* 移除額外 margin */
+    border-radius: 24px; /* 增加圓角 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* 增加陰影 */
+}
+
+.environment-text {
+    flex: 1 1 500px; /* 讓文字在空間不足時換行，並設定最小寬度 */
+    margin: 0; /* 移除額外 margin */
+    padding: 0 1em; /* 增加左右內距 */
+    font-family: "Kiwi Maru", serif;
+    color: #614D3B;
+    text-align: center; /* 讓文字居中 */
+}
+
+.environment-text h2 {
+    font-size: 2.5rem; /* 增大標題字體 */
+    margin-bottom: 1em;
+}
+
+.environment-text p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+
+/* ============ 響應式設計 Media Queries ============ */
+@media (max-width: 1200px) {
+    .header-container {
+        padding: 5px 30px; /* 調整 header 內距 */
+    }
+    .header-list {
+        gap: 1rem;
+    }
+    .header-items a {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+    .logo {
+        width: 80px;
+    }
+    .member-icon img {
+        height: 25px;
+    }
+
+    .teacher-container {
+        padding: 0 1em; /* 在小螢幕下增加左右內距 */
+    }
+
+    .teacher-card {
+        flex-direction: column; /* 小螢幕下垂直排列 */
+        align-items: center; /* 垂直排列時居中 */
+        gap: 20px; /* 調整間距 */
+        padding: 1.5em; /* 調整內距 */
+    }
+
+    .teacher-card:nth-child(even) .teacher-pic {
+        order: 0; /* 偶數卡片圖片恢復預設順序 */
+    }
+
+    .teacher-card:nth-child(even) .teacher-text {
+        order: 1; /* 偶數卡片文字恢復預設順序 */
+    }
+
+    .teacher-card:nth-child(even) .teacher-name {
+        left: auto;
+        right: 0;
+        transform: translateX(30%); /* 恢復預設位置 */
+    }
+
+    .teacher-pic {
+        width: 180px; /* 調整圖片大小 */
+        height: 180px;
+    }
+
+    .teacher-name {
+        font-size: 18px; /* 調整名字字體大小 */
+    }
+
+    .teacher-text {
+        font-size: 1.1rem; /* 調整文字字體大小 */
+        text-align: center; /* 文字居中 */
+    }
+
+    .environment {
+        flex-direction: column; /* 小螢幕下垂直排列 */
+        padding: 2em 1em; /* 調整內距 */
+    }
+
+    .classroom {
+        max-width: 90%; /* 調整圖片最大寬度 */
+        margin-bottom: 2em; /* 增加底部間距 */
+    }
+
+    .environment-text {
+        padding: 0 1em; /* 調整內距 */
+    }
+
+    .environment-text h2 {
+        font-size: 2rem;
+    }
+
+    .environment-text p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        z-index: 100;
+        border-radius: 0; /* 移除圓角 */
+    }
+    .logo {
+        width: 60px;
+    }
+    .header-list {
+        display: none;
+    }
+    .member-icon {
+        display: none;
+    }
+    .hamburger-menu {
+        display: flex;
+    }
+    .header-nav {
+        justify-content: space-between;
+        padding: 0 1em; /* 調整內距 */
+    }
+
+    /* class 區塊在手機版時的調整 */
+    .class {
+        padding: 4em 0.5em; /* 調整內距 */
+    }
+    .Banner {
+        display: none; /* 桌面版背景圖隱藏 */
+    }
+    .mobileBanner {
+        display: block; /* 手機版背景圖顯示 */
+    }
+    .class-text {
+        margin-bottom: 2em;
+    }
+    .class-text h1 {
+        font-size: 2rem;
+    }
+    .class-text h2 {
+        font-size: 1.2rem;
+    }
+    .class-card {
+        flex: 1 1 100%; /* 每個卡片佔滿一行 */
+        max-width: 90%; /* 限制卡片寬度 */
+    }
+    .card-text {
+        font-size: 16px; /* 調整字體大小 */
+    }
+    .class-btn a {
+        font-size: 20px; /* 調整按鈕字體大小 */
+    }
+
+    /* teacher 區塊在手機版時的調整 */
+    .teacher {
+        padding: 4em 0.5em;
+    }
+    .teacher-container {
+        gap: 40px; /* 調整間距 */
+    }
+    .teacher-pic {
+        width: 150px;
+        height: 150px;
+    }
+    .teacher-name {
+        font-size: 16px;
+        transform: translateX(20%); /* 微調位置 */
+    }
+    .teacher-card:nth-child(even) .teacher-name {
+        transform: translateX(-20%); /* 微調位置 */
+    }
+    .teacher-text {
+        font-size: 1rem;
+    }
+
+    /* environment 區塊在手機版時的調整 */
+    .environment {
+        padding: 2em 0.5em;
+    }
+    .environment-text h2 {
+        font-size: 1.8rem;
+    }
+    .environment-text p {
+        font-size: 1.1rem;
+    }
+
+    /* footer 調整 */
+    .footer {
+        padding: 14em 0 0.5rem;
+        background-image: url(pic2/mobile_footer.png); /* 手機版使用手機版背景圖，如果沒有這個圖，則會沿用原本的 */
+    }
+    .footer-social {
+        gap: 20px;
+    }
+    .copyright {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .class-text h1 {
+        font-size: 1.8rem;
+    }
+    .class-text h2 {
+        font-size: 1rem;
+    }
+    .card-text {
+        font-size: 14px;
+    }
+    .class-btn a {
+        font-size: 18px;
+        padding: 0.5em 1.5em;
+    }
+
+    .teacher-text {
+        font-size: 0.9rem;
+    }
+    .teacher-name {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .teacher-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .environment-text h2 {
+        font-size: 1.5rem;
+    }
+    .environment-text p {
+        font-size: 1rem;
+    }
+
+    .copyright {
+        font-size: 0.7rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- ========== header ========== -->
+    <div class="header">
+        <div class="header-container">
+            <nav class="header-nav">
+                <div class="logo">
+                    <a href="index.html"><img src="pic/logo.png" alt="logo"></a>
+                </div>
+                <ul class="header-list">
+                    <li class="header-items">
+                        <a href="#">最新消息</a>
+                    </li>   
+                    <li class="header-items">
+                        <a href="menu.html">所有課程</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="aboutUs.html">關於我們</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="#">常見問題</a>
+                    </li>
+                </ul>
+                <div class="member-icon">
+                    <a href="logIn.html"><img src="pic/icon/member_icon.svg" alt="member"></a>
+                </div>
+
+                <div class="hamburger-menu">
+                    <img src="pic2/hamburger.svg" alt="hamburger">
+                </div>
+            </nav>
+        </div>
+
+        <ul class="mobile-nav">
+            <li class="header-items"><a href="logIn.html">會員登入</a></li>
+            <li class="header-items"><a href="#">最新消息</a></li>
+            <li class="header-items"><a href="menu.html">所有課程</a></li>
+            <li class="header-items"><a href="#">關於我們</a></li>
+            <li class="header-items"><a href="#">常見問題</a></li>
+        </ul>
+    </div>
+
+<!-- ========= class ============ -->
+    <div class="class">
+    <div class="slider-container">
+        <img class="slider-item active" src="pic2/bgi_header.png" alt="Banner">
+        <img class="slider-item" src="pic2/mobile_header.png" alt="mobileBanner">
+        </div>
+
+    <div class="class-container">
+        <div class="class-text">
+            <h1>關於我們</h1>
+            <h2> 我們希望為您打造一個充滿歡樂、溫馨、且充滿成就感的烘焙樂園。<br>提供多元的甜點體驗，滿足不同程度和需求</h2>
+        </div>
+        </div>
+</div>
+            <div class="class-list">
+                <div class="class-card">
+                    <div class="class-icon">
+                        <img src="pic/icon/grow.svg" alt="grow">
+                    </div>
+                    <div class="card-text">
+                        輕鬆入門！<br>
+                        我們提供多樣化的甜點課程，<br>
+                        讓您跟著平板教學，<br>
+                        一步步完成美味作品。<br>
+                        無論是烘焙新手，<br>
+                        還是想享受手作樂趣的朋友，<br>
+                        都能找到適合自己的課程。
+                    </div>
+                    <div class="class-btn">
+                        <a href="#">一般課程</a>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-icon">
+                        <img src="pic/icon/export.svg" alt="export">
+                    </div>
+                    <div class="card-text">
+                        打造烘焙實力！<br>
+                        有基礎、想提升技能的朋友，<br>
+                        我們提供專業的進修課程。<br>
+                        由經驗豐富的老師親自指導，<br>
+                        深入學習進階技巧、<br>掌握專業知識，<br>
+                        為烘焙之路奠定紮實基礎。
+                    </div>
+                    <div class="class-btn" id="export">
+                        <a href="#">進階課程</a>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-icon">
+                        <img src="pic/icon/smile.svg" alt="smile">
+                    </div>
+                    <div class="card-text">
+                        您的專屬烘焙空間！<br>
+                        設備完善、寬敞舒適的場地，<br>
+                        適合朋友聚會、親子活動、<br>
+                        企業團建，甚至是商業拍攝。<br>
+                        您可以盡情發揮創意，<br>
+                        享受美好的烘焙時光。
+                    </div>
+                    <div class="class-btn" id="smile">
+                        <a href="#">場地租借</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- ======= teacher ========= -->
+<div class="teacher">
+    <div class="teacher-container">
+        <div class="teacher-card">
+            <div class="teacher-pic">
+                <img src="pic2/us/woman.png" alt="woman" >
+                <div class="teacher-name">陳心蕾 老師</div>
+            </div>            
+            <div class="teacher-text">
+                <p>專業背景：<br>曾任職於米其林三星餐廳 Mirazur 甜點部門，擁有豐富的國際級甜點製作經驗。</p><br>
+                <p>教學經驗：<br>心蕾老師擅長將複雜的甜點配方和技巧，拆解成容易理解的步驟，讓初學者也能輕鬆上手。<br>教學風格溫柔細膩且充滿耐心，注重學員的實際操作與問題解答，確保每個人都能紮實學習。</p>
+            </div>
+        </div>
+        <div class="teacher-card">
+            <div class="teacher-pic">
+                <img src="pic2/us/man.png" alt="man">
+                <div class="teacher-name">林哲宇 老師</div>
+            </div>            
+            <div class="teacher-text">
+                <p>專業背景：<br>擁有國內多項烘焙競賽冠軍頭銜，並曾於知名烘焙坊擔任產品研發主廚。</p><br>
+                <p>教學經驗： <br>哲宇老師的教學風格活潑有趣，充滿啟發性。<br>他善於鼓勵學員發揮創意，並樂於分享業界的實用技巧和食材知識。<br>無論是基礎技巧或進階應用，他都能以深入淺出的方式引導學員，讓學習過程充滿樂趣。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ======= environment ========= -->
+    <div class="environment">
+        <div class="environment-text">
+            <h2>教室環境</h2>
+            <p>位於新北市板橋市區，鄰近板橋捷運站，交通方便。<br>
+            我們精心打造了一個明亮、寬敞、舒適的烘焙空間，配備專業級的烘焙設備和工具。<br>
+            無論是個人學習，還是親子同樂，都能在這裡找到屬於您的角落。</p>
+        </div>
+        <img src="pic2/us/classroom.png" alt="classroom" class="classroom">
+    </div>
+
+    
+    <!-- ========== footer ========== -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-social">
+                <a href="#"><img src="pic/fb.svg" alt="FB" class="footer-fb"></a>
+                <a href="#"><img src="pic/ig.svg" alt="IG" class="footer-ig"></a>
+                <a href="#"><img src="pic/line.svg" alt="Line" class="footer-line"></a>
+            </div>
+            <div class="copyright">
+                &copy; Copyright 2019. Laaqiq All Right Reserved<br>本網站為緯育TibaMe前端工程師班學員專題作品，本平台僅供學習、展示之用。
+            </div>
+        </div>
+    </div>
+
+    <script src="hamburger.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const sliderItems = document.querySelectorAll('.slider-item');
+    let currentIndex = 0;
+    const intervalTime = 5000; // 圖片切換間隔時間，單位毫秒 (5秒)
+
+    // 檢查是否有圖片可以輪播
+    if (sliderItems.length === 0) {
+        console.warn("沒有找到 .slider-item 元素，輪播將不會啟動。");
+        return;
+    }
+
+    // 如果只有一張圖片，則不需要輪播，直接顯示
+    if (sliderItems.length === 1) {
+        sliderItems[0].classList.add('active');
+        return;
+    }
+
+    function showSlide(index) {
+        sliderItems.forEach((item) => {
+            item.classList.remove('active');
+        });
+        sliderItems[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % sliderItems.length;
+        showSlide(currentIndex);
+    }
+
+    showSlide(currentIndex);
+    setInterval(nextSlide, intervalTime);
+});
+    </script>
+</body>
+</html>

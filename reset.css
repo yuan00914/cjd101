@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
+
+
 /* 通用重置 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
+}
+
+body {
+    font-size: 16px; /* 明確設定根字體大小為 16 像素 */
+    line-height: 1.5;
+    background-color: #F9EFDE;
+    width: 100%;
 }
 
 ul, ol {
@@ -32,11 +41,6 @@ button, input[type="button"], input[type="submit"] {
     cursor: pointer;
 }
 
-html {
-    font-size: 16px; /* 明確設定根字體大小為 16 像素 */
-    background-color: #F9EFDE;
-    width: 100%;
-}
 
 /* 將所有標題字體大小重置為瀏覽器預設字體大小，以便之後統一設定 */
 h1, h2, h3, h4, h5, h6 {
@@ -49,8 +53,12 @@ h1, h2, h3, h4, h5, h6 {
 
     .header {
         width: 100%;
+        /* max-width: 1200px; */
         position: fixed;
-        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
         z-index: 100;
     }
     .header-container {
@@ -61,14 +69,13 @@ h1, h2, h3, h4, h5, h6 {
         padding: 5px 60px;
     }
     .header-nav {
-        color: #614D3B;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         gap: 90px;
     }
     .logo {
-        width: 100px;
+        width: 80px;
     }
     .header-list {
         display: flex;
@@ -76,8 +83,9 @@ h1, h2, h3, h4, h5, h6 {
     }
     .header-items a{
         font-family: "Noto Sans TC", sans-serif;
-        font-size: 20px;
-        letter-spacing: 10%;
+        color: #614D3B;
+        font-size: 1.3rem;
+        letter-spacing: 0.1em;
         position: relative;
     }
     .header-items a::after{
@@ -95,12 +103,98 @@ h1, h2, h3, h4, h5, h6 {
         right: 0;
     }
 
+    /* 漢堡菜單按鈕 (手機版顯示，桌機版隱藏) */
+    .hamburger-menu {
+        display: none;/* 預設隱藏，在手機版顯示 */
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+    }
+    .hamburger-menu img {
+        transition: .3s;
+    }
+
+    /* 手機版導航菜單 (預設隱藏) */
+    .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        width: 95%;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 100;
+        flex-direction: column;
+        padding: 20px 0;
+        text-align: center;
+        z-index: -1;
+    }
+    .mobile-nav.open {
+        display: flex;/* 開啟時顯示 */
+        border-radius: 0 0 12px 12px;
+    }
+    .mobile-nav.open:click {
+        background-color: #614D3B;
+        color: #fff;
+    }
+    .mobile-nav .header-items {
+        margin: 10px 0;
+    }
+    .mobile-nav .header-items a {
+        font-size: 1.2rem;
+        padding: 10px 0;
+        display: block;
+    }
+
+
+    /* ============ 響應式設計 Media Queries ============ */
+    @media (max-width: 1200px) {
+        .header-list {
+            gap: 1rem; 
+        }
+        .header-items a {
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        .logo {
+            width: 80px; 
+        }
+        .member-icon img {
+            height: 25px; 
+        }
+    }
+    @media (max-width: 768px) {
+        .header-container{
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        .logo {
+            width: 60px;
+        }
+        .header-list {
+            display: none;
+        }
+        .member-icon {
+            display: none;
+        }
+        .hamburger-menu{
+            display: flex;
+        }
+        .header-nav {
+            justify-content: space-between;
+        }
+    }
+
 
     /* ===== footer ========= */
-            .footer {
+        .footer {
             font-family: "Kiwi Maru", serif;
-            background-color: #D5B082;
-            padding: 10px;
+            padding: 13rem 10px 10px;
+            background-image: url(pic2/bgi_footer2.png) ;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .footer-container {
             display: flex;
@@ -116,32 +210,23 @@ h1, h2, h3, h4, h5, h6 {
         }
         .footer-fb {
             content: url(pic/icon/fb.svg);
-            transition: 0.5s;
-        }
-        .footer-fb:hover {
-            content: url(pic/icon/fb_color.svg);
-            transition: 0.5s;
         }
         .footer-ig {
             content: url(pic/icon/ig.svg);
-            transition: 0.5s;
-        }
-        .footer-ig:hover {
-            content: url(pic/icon/ig_color.svg);
-            transition: 0.5s;
         }
         .footer-line {
             content: url(pic/icon/line.svg);
-            transition: 0.5s;
-        }
-        .footer-line:hover {
-            content: url(pic/icon/line_color.svg);
-            transition: 0.5s;
         }
         .copyright {
             font-family: "Noto Sans TC", sans-serif;
-            font-size: 14px;
+            font-size: 1rem;
             letter-spacing: 10%;
             color: #fff;
             text-align: center;
+        }
+
+        @media (max-width: 568px) {
+            .footer {
+                padding: 14em 0 .5rem;
+            }
         }

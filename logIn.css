@@ -1,0 +1,185 @@
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .Banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+        .mobileBanner {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .form {
+            max-width: 50%;
+            font-family: "Noto Sans TC", sans-serif;
+            background-color: #FEFCF8;
+            color: #614D3B;
+            border-radius: 24px;
+            padding: 4rem;
+            margin: 13rem 3rem 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        
+        .login-group {
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form label {
+            font-size: 1.2rem;
+        }
+        .form input {
+            font-size: 1.2rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 12px;
+            padding: 10px 2em;
+            outline: none;
+        }
+        .form input:focus {
+            border-color: #FBBD60; /* 點擊時的邊框顏色 */
+            box-shadow: 0 0 0 3px rgba(251, 189, 96, 0.3); /* 點擊時的陰影 */
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+            max-width: 100%;
+        }
+        .btn-group p {
+            text-align: center;
+            margin: 10px;
+        }
+        .btn-group img {
+            width: 10%;
+            margin-right: 1rem;
+        }
+        .login-btn,
+        .login-fb,
+        .login-line {
+            font-size: 1.1rem;
+            color: #fff;
+            border-radius: 12px;
+            padding: 10px 2em;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            transition: background-color 0.3s ease;
+        }
+        .login-btn {
+            background-color: #614D3B;
+        }
+        .login-btn:not(:disabled):hover {
+            background-color: #4A3A2D; /* 懸停效果 */
+        }
+        .login-btn:disabled {
+            opacity: 0.8; /* 禁用時透明度 */
+        }
+        .login-fb {
+            background-color: #4267B2;
+        }
+        .login-fb:hover {
+            background-color: #365899; /* 懸停效果 */
+        }
+        .login-line {
+            background-color: #319F43;
+        }
+        .login-line:hover {
+            background-color: #278536; /* 懸停效果 */
+        }
+        
+
+
+        .attention {
+            font-size: 1rem;
+            text-align: center;
+            line-height: 1.6;
+            margin-top: 15px;
+            white-space: nowrap;
+        }
+        .attention a {
+            color: #e09f40;
+            text-decoration: underline;
+        }
+        .attention a:hover {
+            color: #F35C2F;
+        }
+        
+        .login-text {
+            max-width: 500px;
+            font-size: 1rem;
+            color: #F35C2F;
+            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 2em;
+        }
+
+        @media (max-width: 1024px) {
+            .form {
+                margin: 12rem 0 3rem;
+                gap: 5px;
+            }
+            .form label {
+                font-size: 1rem;
+            }
+            .form input {
+                font-size: 1rem;
+            }
+            .login-btn,
+            .login-fb,
+            .login-line {
+                font-size: 1rem;
+                color: #fff;
+                padding: 10px .5em;
+            }
+            .btn-group img {
+                width: 10%;
+                margin-right: .1rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .Banner {
+                display: none;
+            }
+            .mobileBanner {
+                display: flex;
+            }
+            .form {
+                max-width:90%;
+            }
+        }
+        @media (max-width: 568px) {
+            .form {
+                margin: 8rem 0 3rem;
+                gap: 5px;
+            }
+            .form-input {
+                padding: 10px;
+            }
+            .btn-group {
+                gap: 10px;
+            }
+            .login-btn,
+            .login-fb,
+            .login-line {
+                font-size: .9rem;
+            }
+        }
