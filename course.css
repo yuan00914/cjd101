@@ -1,0 +1,111 @@
+
+        
+        .course {
+            padding: 10em 0;
+        }
+        .course-container {
+            min-width: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .course-left {
+            font-family: "Kiwi Maru", serif;
+            color: #614D3B;
+            margin-bottom: 0;
+        }
+        .course-list {
+            display: flex;
+            gap: 10px;
+            font-size: 18px;
+            margin-bottom: 0.5em;
+        }
+        .course-pic {
+            width: 450px;
+            display: block;
+            border-radius: 24px;
+        }
+        .course-pic h2 {
+            font-size: 36px;
+            margin-bottom: 0.5em;
+        }
+        
+
+        .course-go {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            font-family: "Kiwi Maru", serif;
+            font-size: 36px;
+            color: #F35C2F;
+            margin-bottom: 1em;
+        }
+        .course-btn {
+            font-family: "Kiwi Maru", serif;
+            font-size: 24px;
+            color: #614D3B;
+            background-color: #FBBD60;
+            border-radius: 24px;
+            box-shadow: 2px 4px #614D3B;
+            padding: 5px 20px;
+            margin: 1em;
+            transition: 0.3s;
+        }
+        .course-btn:hover {
+            transform: translateY(-10px);
+            transition: 0.3s;
+        }
+        .course-tag {
+            display: flex;
+            font-family: "Noto Sans TC", sans-serif;
+            background-color: #F3CDB5;
+            letter-spacing: 10%;
+            border-radius: 24px 24px 0 0;
+            gap: 30px;
+            padding: 0.2em 0;
+        }
+        .tag {
+            padding: 0.2em 2em;
+            border-right: 1px solid #fff;
+            align-items: center;
+        }
+        .course-intro p {
+            font-family: "Noto Sans TC", sans-serif;
+            font-size: 20px;
+            color: #614D3B;
+            background-color: #FEFCF8;
+            line-height: 1.6;
+            border-radius: 0 0 24px 24px;
+            padding: 1em;
+        }
+        
+
+        .developing-text {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .Banner {
+                display: none;
+            }
+            .mobileBanner {
+                display: flex;
+            }
+            
+            .course-container {
+                display: none;
+            }
+            .developing-text {
+                font-size: 1.2rem;
+                color: #614D3B;
+                display: flex;
+                margin: auto;
+                text-align: center;
+            }
+        }
+        /* @media (max-width: 568px) {
+            .question h1 {
+                font-size: 1.3rem;
+                margin: 6rem 0;
+            }
+        } */

@@ -3,101 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-        box-sizing: border-box;
-        }
-        ul.list{
-            margin: 24px 0 0 0;
-            padding: 0;
-            list-style: none;
-        }
-        ul.list > li{
-        margin-bottom: 30px;
-        }
+    <title>常見問題</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="question.css">
 
-        ul.list > li:last-child{
-        margin-bottom: 0;
-        }
-
-        ul.list > li > a.link_title{
-        display: block;
-        width: 100%;
-        color: white;
-        background-color: #dd2836;
-        box-shadow: 2px 2px 8px 0 rgba(56, 55, 53, 0.33);
-        border-radius: 26px;
-        padding: 8px 40px;
-        text-decoration: none;
-        font-size: 24px;
-        font-weight: normal;
-        }
-
-        ul.list > li > a.link_title::after{
-        content: "";
-        display: block;
-        clear: both;
-        }
-                    
-        ul.list > li > a.link_title button.switch_btn{
-        float: right;
-        display: inline-block;
-        background: none;
-        border: 0;
-        outline: none;
-        color: white;
-        font-size: 24px;
-        }
-                    
-        ul.list > li > a.link_title button.switch_btn span.-minus{
-        display: none;
-        }
-        ul.list > li > div.inner_block{
-        font-size: 18px;
-        color: #4a4a4a;
-        margin-top: 8px;
-        padding: 0 40px;
-        line-height: 1.6;
-        display: none;
-        }
-        ul.list > li.-on > a.link_title button.switch_btn span.-plus{
-        display: none;
-        }
-        ul.list > li.-on > a.link_title button.switch_btn span.-minus{
-        display: inline-block
-        }
-    </style>
 </head>
 <body>
-    <ul class="list">
-    
-    <li>
-        <a class="link_title" href="#">
-        <button type="button" class="switch_btn">
-            <span class="-plus">+</span><span class="-minus">-</span>
-        </button>
-        Q1. 如何加入會員？
-        </a>
-        <div class="inner_block">
-        A1. 加入會員須經由書面方式加入會員須經由書面方式加入會員須經由書面方式加入會員須經由書面方式加入會員須經由書面方式
+<!-- ========== header ========== -->
+    <header class="header">
+        <div class="header-container">
+            <nav class="header-nav">
+                <div class="logo">
+                    <a href="index.html"><img src="pic/logo.png" alt="logo"></a>
+                </div>
+                <ul class="header-list">
+                    <li class="header-items">
+                        <a href="#">最新消息</a>
+                    </li>   
+                    <li class="header-items">
+                        <a href="menu.html">所有課程</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="aboutUs.html">關於我們</a>
+                    </li>
+                    <li class="header-items">
+                        <a href="#">常見問題</a>
+                    </li>
+                </ul>
+                <div class="member-icon">
+                    <a href="logIn.html"><img src="pic/icon/member_icon.svg" alt="member"></a>
+                </div>
+
+                <div class="hamburger-menu">
+                    <img src="pic2/hamburger.svg" alt="hamburger">
+                </div>
+            </nav>
         </div>
-        
-    </li>
-    
-    <li>
-        <a class="link_title" href="#">
-        <button type="button" class="switch_btn">
-            <span class="-plus">+</span><span class="-minus">-</span>
-        </button>
-        Q2. 如何加入會員？
-        </a>
-        <div class="inner_block">
-        A2. 加入會員須經由書面方式加入會員須經由書面方式加入會員須經由書面方式加入會員須經由書面方式加入會員須經由書面方式
+
+        <ul class="mobile-nav">
+            <li class="header-items"><a href="logIn.html">會員登入</a></li>
+            <li class="header-items"><a href="#">最新消息</a></li>
+            <li class="header-items"><a href="menu.html">所有課程</a></li>
+            <li class="header-items"><a href="aboutUs.html">關於我們</a></li>
+            <li class="header-items"><a href="#">常見問題</a></li>
+        </ul>
+    </header>
+
+
+    <!-- ====== main ======= -->
+    <div class="question">
+        <img class="Banner" src="pic2/bgi_header.png" alt="Banner">
+        <img class="mobileBanner" src="pic2/mobile_header.png" alt="mobileBanner">
+
+        <h1>常見問題</h1>
+        <ul class="list">
+            
+            <li>
+                <a class="link_title" href="#">
+                <button type="button" class="switch_btn">
+                    <span class="-plus">
+                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                    </span>
+                    <span class="-minus">
+                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                    </span>
+                </button>
+                Q：製作一份甜點大概需要多久時間呢？
+                </a>
+                <div class="inner_block">
+                A：製作時間基本上需要2小時以上。
+                </div>
+                
+            </li>
+            
+            <li>
+                <a class="link_title" href="#">
+                <button type="button" class="switch_btn">
+                    <span class="-plus">
+                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                    </span>
+                    <span class="-minus">
+                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                    </span>
+                </button>
+                Q：做好的甜點保存期限大概多久？
+                </a>
+                <div class="inner_block">
+                A：部分甜點需要冷藏保存，3天內使用完畢最佳！餅乾則是7天內。
+                </div>
+                
+            </li>
+            
+            <li>
+                <a class="link_title" href="#">
+                <button type="button" class="switch_btn">
+                    <span class="-plus">
+                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                    </span>
+                    <span class="-minus">
+                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                    </span>
+                </button>
+                Q：素食者也可以享用甜點嗎？
+                </a>
+                <div class="inner_block">
+                A：蛋奶素皆可食用。
+                </div>
+                
+            </li>
+            
+            <li>
+                <a class="link_title" href="#">
+                <button type="button" class="switch_btn">
+                    <span class="-plus">
+                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                    </span>
+                    <span class="-minus">
+                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                    </span>
+                </button>
+                Q： 怎麼預約租借場地？
+                </a>
+                <div class="inner_block">
+                A：因為包場資訊比較複雜，費用也不同。<br>請至Facebook粉絲團或者聯絡我們Line官方帳號，小編會為您做詳細說明。
+                </div>
+                
+            </li>
+            
+            <li>
+                <a class="link_title" href="#">
+                <button type="button" class="switch_btn">
+                    <span class="-plus">
+                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                    </span>
+                    <span class="-minus">
+                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                    </span>
+                </button>
+                Q：遲到還可以做甜點嗎？
+                </a>
+                <div class="inner_block">
+                A：我們座位都會保留10分鐘，如果超過10分鐘，就要到店內重新侯位。<br>另外，若是晚上最後一個場次，考慮到烘焙時長，超過10分鐘就無法盡點了。
+                </div>
+                
+            </li>
+            
+            <li>
+                <a class="link_title" href="#">
+                <button type="button" class="switch_btn">
+                    <span class="-plus">
+                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                    </span>
+                    <span class="-minus">
+                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                    </span>
+                </button>
+                Q： 如果線上訂位額滿，還可以去做甜點嗎？
+                </a>
+                <div class="inner_block">
+                A：可以的，但要到現場排侯位。留下姓名、手機號碼就可先離開。<br>若有空位，就會以後位順序call你們在15分鐘以內回來。至於侯位時間，要看當天現場人數，越早侯位就越有機會做到甜點。
+                </div>
+                
+            </li>
+        </ul>
+        <div class="developing-text">
+            努力開發中
         </div>
-        
-    </li>
-</ul>
+    </div>
+
+    
+    <!-- ========== footer ========== -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-social">
+                <a href="#"><img src="pic/fb.svg" alt="FB" class="footer-fb"></a>
+                <a href="#"><img src="pic/ig.svg" alt="IG" class="footer-ig"></a>
+                <a href="#"><img src="pic/line.svg" alt="Line" class="footer-line"></a>
+            </div>
+            <div class="copyright">
+                &copy; Copyright 2019. Laaqiq All Right Reserved<br>本網站為緯育TibaMe前端工程師班學員專題作品，本平台僅供學習、展示之用。
+            </div>
+        </div>
+
 
 <script src="./jquery/jquery-3.7.1.min.js"></script>
 <script>
