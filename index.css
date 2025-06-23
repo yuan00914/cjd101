@@ -48,7 +48,7 @@
                 font-size: 1.5rem;
             }
             .banner-txt p {
-                font-size: .5rem; 
+                font-size: .9rem; 
             }
         }
 
@@ -164,12 +164,12 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.6;
     gap: 15px;
 }
 .hot-pic-text h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .hot-nav-button {
@@ -216,7 +216,7 @@
     }
     .hot-button {
         position: static; /* 取消絕對定位 */
-        margin-top: 20px; /* 調整與文字的間距 */
+        margin-top: 20px; 
     }
     .hot-container {
         gap: 40px;
@@ -247,6 +247,9 @@
         overflow-x: auto; 
         padding: 0 5%;
     }
+    .hot-pic-text {
+        font-size: 1rem;
+    }
 }
 @media (max-width: 568px) {
     .hot {
@@ -258,6 +261,11 @@
     .hot-text p {
         font-size: .5rem;
         text-align: start;
+    }
+    .hot-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }
 
@@ -395,16 +403,16 @@
 }
 .contact-container {
     max-width: 1200px;
-    width: 100%;
+    width: 90%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
     gap: 0 20px;
 }
 .contact-text{
     font-family: "Kiwi Maru", serif;
     color: #614D3B;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     white-space: nowrap;
     flex: 1 1 400px;
@@ -456,7 +464,9 @@
     .contact {
         padding: 4rem 0;
     }
-    
+    .contact-text{
+        margin: 0 10px;
+    }
     .contact-text h2 {
         font-size: 1.5rem;
     }
