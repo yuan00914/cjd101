@@ -274,7 +274,7 @@
     /* ======== us ========*/
 .us {
     background: url(pic/bgicon.svg) no-repeat center / cover;
-    padding: 8em 0;
+    padding: 10em 0;
 }
 .us-container {
     max-width: 1200px;
@@ -462,7 +462,7 @@
 }
 @media (max-width: 568px) {
     .contact {
-        padding: 4rem 0;
+        padding: 4rem 0 0;
     }
     .contact-text{
         margin: 0 10px;

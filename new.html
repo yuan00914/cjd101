@@ -8,7 +8,7 @@
     <style>
         .news-list {
             max-width: 1200px;
-            width: 80%;
+            width: 70%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -24,10 +24,12 @@
         .news-item {
             background-color: #fff;
             border-radius: 24px;
+            position: relative;
         }
         .news-item a {
-            display: flex;
+            display: block;
         }
+        
         .news-pic {
             max-width: 40%;
         }
@@ -38,8 +40,8 @@
             line-height: 1.7;
         }
         .news-item h2 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: .2rem;
             white-space: nowrap;
         }
         .news-item p {
@@ -52,6 +54,10 @@
             font-size: 1rem;
             margin-bottom: 1rem;
         }
+        .news-item .more {
+            display: block;
+            position: absolute;
+        }
         
         @media (max-width: 1200px) {
             .news-item h2 {
@@ -60,11 +66,11 @@
         }
         @media (max-width: 768px) {
             .news-item h2 {
-                font-size: 1.2rem;
-                margin-bottom: 1rem;
+                font-size: 1.3rem;
+                margin-bottom: .1rem;
             }
             .news-item p {
-                font-size: .9rem;
+                font-size: 1rem;
             }
             .news-time {
                 font-size: .8rem;
@@ -79,18 +85,29 @@
                 flex-direction: column;
             }
             .news-pic {
+                max-width: 100%;
+            }
+            .news-pic img {
                 width: 100%;
+                height: 190px;
+                object-fit: cover;
+                overflow: hidden;
+                border-radius: 24px 24px 0 0;
+            }
+
+            
+            .news-text {
+                padding: 1.5rem;
             }
             .news-item h2 {
-                font-size: 1.2rem;
-                margin-bottom: 1rem;
+                font-size: 1.3rem;
+                margin-bottom: .1rem;
             }
             .news-item p {
                 font-size: .9rem;
             }
             .news-time {
                 font-size: .8rem;
-                margin-bottom: 1rem;
             }
         }
     </style>
@@ -142,60 +159,76 @@
         <img src="pic2/bgi_header.png" alt="header-banner" class="Banner">
         <div class="news-list">
             <h1>最新消息</h1>
-            <div class="news-item"><a href="#">
-                <div class="news-pic">
-                    <img src="pic2/news/lease.png" alt="lease">
-                </div>
-                <div class="news-text">
-                    <h2>推出全新「場地租借」服務，打造你的專屬烘焙空間</h2>
-                    <span class="news-time">2025年3月15日</span>
-                    <p>日甜所現已開放場地租借服務！<br>無論是朋友聚會、親子活動、企業團建，或是產品發表、商業拍攝，我們提供設備齊全、溫馨舒適的烘焙空間。詳情請見場地租借頁面。</p>
-                </div>
-            </div></a>
-
-            <div class="news-item"><a href="#">
-                <div class="news-pic">
-                    <img src="pic2/news/mom.png" alt="mother">
-                </div>
-                <div class="news-text">
-                    <h2>母親節限定</h2>
-                    <span class="news-time">2025年6月7日</span>
-                    <p>康乃馨翻糖蛋糕好評加開，感謝大家熱烈迴響！<br>我們的「母親節限定：獻給媽咪的康乃馨翻糖蛋糕」課程在首波推出後廣受好評。為了滿足更多學員的需求，我們決定在 6月15日 (週日) 加開一堂。名額有限，把握機會，給媽咪最溫馨的驚喜。</p>
-                </div></a>
+            <div class="news-item">
+                <a href="#">
+                    <div class="news-pic">
+                        <img src="pic2/news/lease.png" alt="lease">
+                    </div>
+                    <div class="news-text">
+                        <h2>推出全新「場地租借」服務，打造你的專屬烘焙空間</h2>
+                        <span class="news-time">2025年3月15日</span>
+                        <p>日甜所現已開放場地租借服務！</p>
+                    </div>
+                </a>
+                <a href="#" class="more">Read more</a>
             </div>
 
-            <div class="news-item"><a href="#">
-                <div class="news-pic">
-                    <img src="pic2/news/chi.png" alt="chiffon">
-                </div>
-                <div class="news-text">
-                    <h2>烘焙新手必看。「經典原味戚風蛋糕」平板教學升級。</h2>
-                    <span class="news-time">2025年5月20日</span>
-                    <p>深受新手喜愛的「經典原味戚風蛋糕」平板教學課程，我們優化了教學影片內容，讓步驟更加清晰易懂，助您輕鬆烤出零失敗的蓬鬆戚風。無論是初次嘗試烘焙，還是想重溫基礎，這堂課都是您的最佳選擇。</p>
-                </div>
-            </div></a>
+            <div class="news-item">
+                <a href="#">
+                    <div class="news-pic">
+                        <img src="pic2/news/mom.png" alt="mother">
+                    </div>
+                    <div class="news-text">
+                        <h2>母親節限定</h2>
+                        <span class="news-time">2025年6月7日</span>
+                        <p>康乃馨翻糖蛋糕好評加開，感謝大家熱烈迴響！</p>
+                    </div>
+                </a>
+                <a href="#" class="more">Read more</a>
+            </div>
 
-            <div class="news-item"><a href="#">
-                <div class="news-pic">
-                    <img src="pic2/news/levelup.png" alt="levelUp">
-                </div>
-                <div class="news-text">
-                    <h2>教室環境升級，給您更舒適的烘焙體驗</h2>
-                    <span class="news-time">2025年5月5日</span>
-                    <p>為了提供更優質的學習環境，日甜所近期對教室設備和空間進行了小幅升級。我們增加了更多烘焙工具，並重新調整了工作檯面，確保每位學員都有更寬敞舒適的操作空間。期待您來體驗！</p>
-                </div>
-            </div></a>
+            <div class="news-item">
+                <a href="#">
+                    <div class="news-pic">
+                        <img src="pic2/news/chi.png" alt="chiffon">
+                    </div>
+                    <div class="news-text">
+                        <h2>烘焙新手必看。「經典原味戚風蛋糕」平板教學升級。</h2>
+                        <span class="news-time">2025年5月20日</span>
+                        <p>深受新手喜愛的「經典原味戚風蛋糕」平板教學課程，我們優化了教學影片內容，讓步驟更加清晰易懂，助您輕鬆烤出零失敗的蓬鬆戚風。</p>
+                    </div>
+                </a>
+                <a href="#" class="more">Read more</a>
+            </div>
 
-            <div class="news-item"><a href="#">
-                <div class="news-pic">
-                    <img src="pic2/news/timetable.png" alt="timetable">
-                </div>
-                <div class="news-text">
-                    <h2>2025年度最新課程表正式發佈</h2>
-                    <span class="news-time">2025年4月25日</span>
-                    <p>期待已久！我們正式發布了2025年度的全新課程表。從基礎入門到專業進修，從經典法式到創新口味，應有盡有。無論您是烘焙愛好者還是專業追求者，都能找到心儀的課程。趕快來預約您的專屬甜蜜時光吧。</p>
-                </div>
-            </div></a>
+            <div class="news-item">
+                <a href="#">
+                    <div class="news-pic">
+                        <img src="pic2/news/levelup.png" alt="levelUp">
+                    </div>
+                    <div class="news-text">
+                        <h2>教室環境升級，給您更舒適的烘焙體驗</h2>
+                        <span class="news-time">2025年5月5日</span>
+                        <p>為了提供更優質的學習環境，日甜所近期對教室設備和空間進行了小幅升級。</p>
+                    </div>
+                </a>
+                <a href="#" class="more">Read more</a>
+            </div>
+
+            <div class="news-item">
+                <a href="#">
+                    <div class="news-pic">
+                        <img src="pic2/news/timetable.png" alt="timetable">
+                    </div>
+                    <div class="news-text">
+                        <h2>最新2025年度課程表正式發佈</h2>
+                        <span class="news-time">2025年4月25日</span>
+                        <p>期待已久！我們正式發布了2025年度的全新課程表。</p>
+                    </div>
+                </a>
+                <a href="#" class="more">Read more</a>
+            </div>
+
         </div>
     </div>
 
