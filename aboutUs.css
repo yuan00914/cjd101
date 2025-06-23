@@ -29,12 +29,12 @@
     line-height: 1.6;
     margin-bottom: 4em;
 }
-.class-text h1 {
+.class-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1em;
 }
-.class-text h2 {
-    font-size: 1.5rem;
+.class-text p {
+    font-size: 1.3rem;
 }
 
 
@@ -45,7 +45,7 @@
 }
 .card-text {
     font-family: "Kiwi Maru", serif;
-    font-size: 20px;
+    font-size: 1.3rem;
     line-height: 1.6;
     margin: 30px 1em;
 }
@@ -100,25 +100,43 @@
     .mobileBanner {
         display: flex;
     }
-    .class {
-        padding: 12rem 0;;
-    }
+
     .class-list {
-        max-width: 80%;
+        max-width: 100%;
         flex-direction: column;
         margin: auto;
     }
-    .class h1 {
+    .class h2 {
         font-size: 2rem;
     }
+    .class p {
+        font-size: 1rem;
+    }
+    .class-btn a {
+        font-size: .9rem;
+    }
+    .card-text {
+        font-size: 1rem;
+        margin: 30px 1em;
+    }
+}
+@media (max-width: 568px) {
+    .class-list {
+        max-width: 90%;
+    }
+    .class {
+        padding: 7rem 10px 3rem;
+    }
     .class h2 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+    }
+    .class p {
+        font-size: .9rem;
     }
 }
 
 /* ======== teacher ========== */
 .teacher {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,7 +145,8 @@
 }
 
 .teacher-container {
-    min-width: 1200px;
+    max-width: 1200px;
+    width: 80%;
     display: flex;
     flex-direction: column;
     gap: 60px;
@@ -135,7 +154,7 @@
 
 .teacher-card {
     display: grid;
-    grid-template-columns: auto 1fr;/* 左側人物區塊自動寬度，右側文本佔滿剩餘空間 */
+    grid-template-columns: auto 1fr;
     grid-template-rows: auto;
     gap: 60px;
 }
@@ -148,11 +167,12 @@
 .teacher-name {
     position: absolute;
     right: 0;
-    background-color: #F9EFDE;
+    bottom: 40%;
+    background-color: #F7EFE6;
     padding: 10px;
     border-radius: 8px;
     color: #854D0E;
-    font-size: 20px;
+    font-size: 1.3rem;
     white-space: nowrap;
     z-index: 2;
 }
@@ -167,21 +187,90 @@
 }
 
 
+@media (max-width: 1200px) {
+    .teacher {
+        padding: 6em 0;
+    }
+    .teacher-container {
+        width: 90%;
+        gap: 40px;
+    }
+    .teacher-name {
+        bottom: 50%;
+    }
+    .teacher-card {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .teacher {
+        padding: 4em 0;
+    }
+    .teacher-container {
+        width: 100%;
+        gap: 30px;
+    }
+    .teacher-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .teacher-pic {
+        justify-self: center;
+    }
+    .teacher-name {
+        font-size: 1rem;
+        right: 20%;
+        bottom: 0;
+    }
+    .teacher-text {
+        margin: 1rem 6rem;
+        padding: 1em;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 568px) {
+    .teacher {
+        padding: 3rem 0;
+    }
+    .teacher-container {
+        gap: 15px;
+    }
+    
+    .teacher-pic {
+        max-width: 180px;
+    }
+    .teacher-card {
+        gap: 10px;
+    }
+    .teacher-text {
+        margin: 1rem;
+        padding: 1rem;
+        font-size: .9rem;
+    }
+    .teacher-name {
+        font-size: .9rem;
+        padding: 5px;
+    }
+}
 
 
 
 /* ========== environment =========== */
         .environment {
+            max-width: 1200px;
+            width: 90%;
             display: flex;
             flex-flow: wrap;
-            justify-content: center;
-            align-content: center;
+            margin: 0 auto;
+            align-items: center;
             gap: 30px;
+            padding: 6rem 0 3rem;
         }
         .classroom {
             flex: 1;
-            max-width: 300px;
-            margin: 2rem;
+            max-width: 30%;
         }
 
         .environment-text {
@@ -189,16 +278,59 @@
             margin: 20px;
             flex-direction: column;
             justify-content: center; 
-            padding: 0 1em 0 10em;
+            padding: 0 3rem;
             font-family: "Kiwi Maru", serif;
             color: #614D3B;
         }
 
         .environment-text h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1em;
         }
         .environment-text p {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             line-height: 1.6;
+        }
+
+        @media (max-width: 1200px) {
+            .environment-text {
+                padding: 0;
+            }
+            .environment-text {
+                margin: 10px;
+                padding: 0 .5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .environment {
+                flex-direction: column-reverse;
+            }
+            .classroom {
+                max-width: 60%;
+            }
+            .environment-text {
+                margin: 10px;
+                padding: 0;
+            }
+            .environment-text h2 {
+                font-size: 2rem;
+            }
+            .environment-text p {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 568px) {
+            .environment {
+                padding: 3rem 0 0;
+                gap: 10px;
+            }
+            .classroom {
+                max-width: 50%;
+            }
+            .environment-text h2 {
+                font-size: 1.5rem;
+            }
+            .environment-text p {
+                font-size: .9rem;
+            }
         }
