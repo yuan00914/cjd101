@@ -260,7 +260,6 @@
     }
     .hot-text p {
         font-size: .9rem;
-        text-align: start;
     }
     .hot-button {
         width: 40px;
@@ -476,5 +475,6 @@
     }
     .contact-text p {
         font-size: .9rem;
+        text-align: start;
     }
 }
