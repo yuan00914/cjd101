@@ -219,7 +219,7 @@
         margin-top: 20px; 
     }
     .hot-container {
-        gap: 40px;
+        gap: 20px;
     }
     .hot-text h2 {
         font-size: 2rem;
@@ -245,7 +245,7 @@
     }
     .hot-list {
         overflow-x: auto; 
-        padding: 0 5%;
+        padding: 5%;
     }
     .hot-pic-text {
         font-size: 1rem;
@@ -253,7 +253,7 @@
 }
 @media (max-width: 568px) {
     .hot {
-        padding: 2rem 0 6rem;
+        padding: 2rem 0 4rem;
     }
         .hot-text h2 {
         font-size: 1.5rem;
@@ -273,11 +273,11 @@
     /* ======== us ========*/
 .us {
     background: url(pic/bgicon.svg) no-repeat center / cover;
-    padding: 10em 0;
+    padding: 6em 0;
 }
 .us-container {
     max-width: 1200px;
-    margin: 0 auto 6rem;
+    margin: 0 auto 4rem;
     display: flex; 
     flex-flow: wrap;
     justify-content: center;
@@ -346,12 +346,16 @@
 
 @media (max-width: 768px) {
     .us {
-        padding: 4rem 0;
+        padding: 2rem 0;
     }
     .us-container {
         flex-direction: column; 
         justify-content: center;
         align-content: center;
+        gap: 20px;
+    }
+    .us-pic{
+        width: 80%;
     }
     .us-text {
         margin: 1rem auto;
@@ -369,6 +373,7 @@
     .us-text p {
         font-size: 1rem;
         text-align: start;
+        margin-bottom: 0;
     }
     .us-button {
         margin: 20px auto 0;
@@ -395,7 +400,7 @@
 
         /* ======== contact ========*/
 .contact {
-    padding: 6em;
+    padding: 6em 6em 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -435,7 +440,7 @@
 }
 @media (max-width: 768px) {
     .contact {
-        padding: 4rem 0;
+        padding: 4rem 0 0;
     }
     .contact-container {
         flex-direction: column;
@@ -463,9 +468,6 @@
 @media (max-width: 568px) {
     .contact {
         padding: 4rem 0 0;
-    }
-    .contact-container {
-        gap: 10px;
     }
     .contact-text{
         margin: 0 10px;

@@ -27,7 +27,7 @@
     font-family: "Kiwi Maru", serif;
     text-align: center;
     line-height: 1.6;
-    margin-bottom: 4em;
+    margin: 1.5em;
 }
 .class-text h2 {
     font-size: 2.5rem;
@@ -47,7 +47,7 @@
     font-family: "Kiwi Maru", serif;
     font-size: 1.3rem;
     line-height: 1.6;
-    margin: 30px 1em;
+    margin: 1em;
 }
 .class-card {
     background-color: #FDF9F2;
@@ -61,10 +61,9 @@
     padding: 2em 0;
 }
 .class-card:hover {
-    outline: 1px solid #854D0E;
-    transition: 3s ease;
+    outline: 2px solid #854D0E;
 }
-.class-card:hover .class-btn {
+.class-btn:hover {
     background-color: #854D0E;
     color: #FDF9F2;
     transition: .5s;
@@ -108,6 +107,7 @@
     }
     .class h2 {
         font-size: 2rem;
+        margin-bottom: .5em;
     }
     .class p {
         font-size: 1rem;
@@ -117,7 +117,10 @@
     }
     .card-text {
         font-size: 1rem;
-        margin: 30px 1em;
+        margin: .5em;
+    }
+    .class-icon img{
+        width: 80%;
     }
 }
 @media (max-width: 568px) {
@@ -132,6 +135,15 @@
     }
     .class p {
         font-size: .9rem;
+    }
+    .class-card{
+        padding: 1em 0;
+    }
+    .class-icon img{
+        width: 60%;
+    }
+    .card-text {
+        font-size: .9em;
     }
 }
 
@@ -169,6 +181,8 @@
     right: 0;
     bottom: 40%;
     background-color: #F7EFE6;
+    
+    box-shadow: 3px 3px #F3CDB5;
     padding: 10px;
     border-radius: 8px;
     color: #854D0E;
@@ -239,7 +253,7 @@
     }
     
     .teacher-pic {
-        max-width: 180px;
+        max-width: 150px;
     }
     .teacher-card {
         gap: 10px;
@@ -266,7 +280,7 @@
             margin: 0 auto;
             align-items: center;
             gap: 30px;
-            padding: 6rem 0 3rem;
+            padding: 6rem 0 0;
         }
         .classroom {
             flex: 1;
@@ -285,7 +299,7 @@
 
         .environment-text h2 {
             font-size: 2.5rem;
-            margin-bottom: 1em;
+            margin-bottom: .5em;
         }
         .environment-text p {
             font-size: 1.3rem;
@@ -306,7 +320,7 @@
                 flex-direction: column-reverse;
             }
             .classroom {
-                max-width: 60%;
+                max-width: 50%;
             }
             .environment-text {
                 margin: 10px;

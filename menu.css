@@ -8,9 +8,9 @@
             flex-wrap: wrap;
             justify-content: center;
             text-align: center;
-            margin: 3rem auto 6rem;
+            margin: 3rem auto;
             padding: 10px;
-            gap: 5px; 
+            gap: 10px;
             
             font-family: "Kiwi Maru", serif;
             color: #614D3B;
@@ -32,13 +32,11 @@
 
         .menu-card-list {
             max-width: 1200px;
-            width: 90%;
-            height: 90%;
+            width: 80%;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 60px 30px;
+            gap: 2rem;
             margin: auto;
-            margin-bottom: 6em;
             justify-items: center;
         }
         .menu-card {
@@ -47,35 +45,33 @@
             font-family: "Kiwi Maru", serif;
             color: #614D3B;
             font-size: 1.3rem;
-            background-color: #fff;
-            border-radius: 12px;
-            transition: .3s;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-        .menu-card:hover {
-            transform: scale(1.05);
-            transition: .3s;            
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .menu-pic {
-            max-width: 270px;
+            max-width: 250px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-bottom: 12px;
         }
         .menu-pic img {
             width: 100%;
-            height: 300px;
+            height: 200px;
             object-fit: cover;
+            border-radius: 12px;
+            
+            transition: .5s;
         }
+        .menu-card:hover .menu-pic img{
+            transform: scale(1.1);
+        }
+
         .menu-txt {
-            padding: 15px;
             text-align: center;
-        }
-        .menu-txt h3 {
-            margin-bottom: 8px;
         }
         .menu-txt span {
             font-size: 1.2rem;
-            color: #F35C2F;
+            color: #f3432f;
         }
 
         .menu-card.hidden {
@@ -85,42 +81,52 @@
 
         /* ============ 響應式設計 Media Queries ============ */
         @media (max-width: 1200px) {
+            .menu-nav{
+                margin: 3rem;
+                padding: 5px;
+            }
             .menu-card-list {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 40px 20px;
-                padding: 0 15px;
+                padding: 0 20px;
             }
         }
 
         @media (max-width: 768px){
             .menu-item {
                 padding: 10px;
-                margin-bottom: 5px;
+                /* margin-bottom: 5px; */
                 font-size: 1.1rem;
             }
             .menu-card-list {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
-                padding: 0 20px;
             }
 
             @media (max-width: 568px) {
                 .menu-nav {
                     flex-direction: column;
-                    margin: 3rem 1rem;
+                    margin: 1.5rem;
                     padding: 5px;
+                    gap: 0;
+                }
+                .menu-item{
+                    margin-bottom: 0;
                 }
                 .menu-card-list {
                     grid-template-columns: repeat(2, 1fr);
-                    gap: 15px;
+                    padding: 0;
+                }
+                .menu-pic {
+                    margin-bottom: 5px;
                 }
                 .menu-pic img {
-                    height: 120px;
+                    width: 150px;
+                    height: 150px;
                     object-fit: cover;
                 }
                 .menu-txt {
                     flex-grow: 1;
-                    padding: 10px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;

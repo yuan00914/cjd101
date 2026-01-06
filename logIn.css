@@ -21,38 +21,37 @@
             z-index: -1;
         }
 
+        h2 {
+            font-family: "Kiwi Maru", serif;
+            color: #614D3B;
+            font-size: 2.5rem;
+            margin: 10rem 0 0;
+        }
+        
         .form {
             max-width: 500px;
             font-family: "Noto Sans TC", sans-serif;
             background-color: #FEFCF8;
             color: #614D3B;
-            border-radius: 24px;
-            padding: 4rem;
-            margin: 13rem 3rem 3rem;
+            border-radius: 12px;
+            padding: 2rem 4rem;
+            margin: 3rem 0 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             z-index: 10;
         }
         
-        .login-group {
-            margin-bottom: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .form label {
-            font-size: 1.2rem;
-        }
         .form input {
+            display: inline-block;
             width: 100%;
             font-size: 1.2rem;
             border: 1px solid #D1D5DB;
             border-radius: 12px;
             padding: 10px 2em;
             outline: none;
+            margin-bottom: 10px;
         }
         .form input:focus {
             border-color: #FBBD60; /* 點擊時的邊框顏色 */
@@ -68,10 +67,10 @@
         }
         .btn-group p {
             text-align: center;
-            margin: 10px 0;
         }
         .btn-group img {
             width: 10%;
+            flex: 1;
         }
         .login-btn,
         .login-fb,
@@ -83,6 +82,7 @@
             border-radius: 12px;
             padding: 10px;
             letter-spacing: 0.1em;
+            gap: 5px;
             white-space: nowrap;
             transition: background-color 0.3s ease;
         }
@@ -135,15 +135,13 @@
         }
 
         @media (max-width: 1024px) {
-            .form {
-                margin: 12rem 0 3rem;
-                gap: 5px;
-            }
-            .form label {
-                font-size: 1rem;
+            h2 {
+                font-size: 2rem;
+                margin: 8rem 0 0;
             }
             .form input {
                 font-size: 1rem;
+                padding: 10px;
             }
             .login-btn,
             .login-fb,
@@ -161,6 +159,7 @@
                 margin-bottom: 1rem;
             }
         }
+
         @media (max-width: 768px) {
             .Banner {
                 display: none;
@@ -168,21 +167,22 @@
             .mobileBanner {
                 display: flex;
             }
-            .form {
-                margin: 13rem 0 3rem;
+            h2 {
+                font-size: 2rem;
+                margin: 10rem 0 0;
             }
+            
             .login-text {
                 margin-bottom: .8rem;
             }
         }
         @media (max-width: 568px) {
+            h2 {
+                font-size: 1.5rem;
+                margin: 8rem 0 0;
+            }
             .form {
                 max-width: 300px;
-                margin: 8rem 0 3rem;
-                gap: 5px;
-            }
-            .form label {
-                font-size: .8rem;
             }
             .form input {
                 width: 100%;
@@ -196,7 +196,7 @@
             }
             .btn-group p {
                 width: 100%;
-                font-size: .9rem;
+                font-size: .8rem;
             }
             .login-btn,
             .login-fb,

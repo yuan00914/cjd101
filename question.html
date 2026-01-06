@@ -6,11 +6,10 @@
     <title>常見問題</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="question.css">
-
 </head>
 <body>
 <!-- ========== header ========== -->
-    <header class="header">
+    <div class="header">
         <div class="header-container">
             <nav class="header-nav">
                 <div class="logo">
@@ -18,7 +17,7 @@
                 </div>
                 <ul class="header-list">
                     <li class="header-items">
-                        <a href="#">最新消息</a>
+                        <a href="news.html">最新消息</a>
                     </li>   
                     <li class="header-items">
                         <a href="menu.html">所有課程</a>
@@ -27,7 +26,7 @@
                         <a href="aboutUs.html">關於我們</a>
                     </li>
                     <li class="header-items">
-                        <a href="#">常見問題</a>
+                        <a href="question.html">常見問題</a>
                     </li>
                 </ul>
                 <div class="member-icon">
@@ -42,30 +41,30 @@
 
         <ul class="mobile-nav">
             <li class="header-items"><a href="logIn.html">會員登入</a></li>
-            <li class="header-items"><a href="#">最新消息</a></li>
+            <li class="header-items"><a href="news.html">最新消息</a></li>
             <li class="header-items"><a href="menu.html">所有課程</a></li>
             <li class="header-items"><a href="aboutUs.html">關於我們</a></li>
-            <li class="header-items"><a href="#">常見問題</a></li>
+            <li class="header-items"><a href="question.html">常見問題</a></li>
         </ul>
-    </header>
-
+    </div>
 
     <!-- ====== main ======= -->
     <div class="question">
         <img class="Banner" src="pic2/bgi_header.png" alt="Banner">
         <img class="mobileBanner" src="pic2/mobile_header.png" alt="mobileBanner">
 
-        <h1>常見問題</h1>
+        <h2>常見問題</h2>
+
         <ul class="list">
             
             <li>
                 <a class="link_title" href="#">
                 <button type="button" class="switch_btn">
                     <span class="-plus">
-                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                        <img src="pic2/icon/arrowDown.svg" alt="up">
                     </span>
                     <span class="-minus">
-                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                        <img src="pic2/icon/arrowUp.svg" alt="down">
                     </span>
                 </button>
                 Q：製作一份甜點大概需要多久時間呢？
@@ -80,10 +79,10 @@
                 <a class="link_title" href="#">
                 <button type="button" class="switch_btn">
                     <span class="-plus">
-                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                        <img src="pic2/icon/arrowDown.svg" alt="up">
                     </span>
                     <span class="-minus">
-                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                        <img src="pic2/icon/arrowUp.svg" alt="down">
                     </span>
                 </button>
                 Q：做好的甜點保存期限大概多久？
@@ -98,10 +97,10 @@
                 <a class="link_title" href="#">
                 <button type="button" class="switch_btn">
                     <span class="-plus">
-                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                        <img src="pic2/icon/arrowDown.svg" alt="up">
                     </span>
                     <span class="-minus">
-                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                        <img src="pic2/icon/arrowUp.svg" alt="down">
                     </span>
                 </button>
                 Q：素食者也可以享用甜點嗎？
@@ -116,10 +115,10 @@
                 <a class="link_title" href="#">
                 <button type="button" class="switch_btn">
                     <span class="-plus">
-                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                        <img src="pic2/icon/arrowDown.svg" alt="up">
                     </span>
                     <span class="-minus">
-                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                        <img src="pic2/icon/arrowUp.svg" alt="down">
                     </span>
                 </button>
                 Q： 怎麼預約租借場地？
@@ -134,10 +133,10 @@
                 <a class="link_title" href="#">
                 <button type="button" class="switch_btn">
                     <span class="-plus">
-                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                        <img src="pic2/icon/arrowDown.svg" alt="up">
                     </span>
                     <span class="-minus">
-                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                        <img src="pic2/icon/arrowUp.svg" alt="down">
                     </span>
                 </button>
                 Q：遲到還可以做甜點嗎？
@@ -152,10 +151,10 @@
                 <a class="link_title" href="#">
                 <button type="button" class="switch_btn">
                     <span class="-plus">
-                        <img src="pic2/icon/arrowUp.svg" alt="up">
+                        <img src="pic2/icon/arrowDown.svg" alt="up">
                     </span>
                     <span class="-minus">
-                        <img src="pic2/icon/arrowDown.svg" alt="down">
+                        <img src="pic2/icon/arrowUp.svg" alt="down">
                     </span>
                 </button>
                 Q： 如果線上訂位額滿，還可以去做甜點嗎？
@@ -166,9 +165,6 @@
                 
             </li>
         </ul>
-        <div class="developing-text">
-            努力開發中
-        </div>
     </div>
 
     
@@ -184,16 +180,18 @@
                 &copy; Copyright 2019. Laaqiq All Right Reserved<br>本網站為緯育TibaMe前端工程師班學員專題作品，本平台僅供學習、展示之用。
             </div>
         </div>
+    </div>
 
+    <script src="./jquery/jquery-3.7.1.min.js"></script>
+    
+    <script src="hamburger.js"></script>
+    <script>
+        $("a.link_title").on("click", function(e){
+            e.preventDefault();
+            $(this).closest("li").toggleClass("-on");
 
-<script src="./jquery/jquery-3.7.1.min.js"></script>
-<script>
-    $("a.link_title").on("click", function(e){
-        e.preventDefault();
-        $(this).closest("li").toggleClass("-on");
-
-        $(this).closest("li").find("div.inner_block").slideToggle();
-    });
-</script>
+            $(this).closest("li").find("div.inner_block").slideToggle();
+        });
+    </script>
 </body>
 </html>

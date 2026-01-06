@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 90px;
+        gap: 100px;
     }
     .logo {
         width: 80px;
@@ -118,13 +118,15 @@ h1, h2, h3, h4, h5, h6 {
     .mobile-nav {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
         width: 95%;
         background-color: #fff;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         z-index: 100;
         flex-direction: column;
-        padding: 20px 0;
+        padding: 20px 0 0;
         text-align: center;
         z-index: -1;
     }
@@ -140,8 +142,7 @@ h1, h2, h3, h4, h5, h6 {
         margin: 10px 0;
     }
     .mobile-nav .header-items a {
-        font-size: 1.2rem;
-        padding: 10px 0;
+        font-size: 1rem;
         display: block;
     }
 
@@ -167,6 +168,7 @@ h1, h2, h3, h4, h5, h6 {
             width: 100%;
             background-color: #fff;
             box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+            padding: 5px 40px;
             z-index: 100;
         }
         .logo {
@@ -229,8 +231,13 @@ h1, h2, h3, h4, h5, h6 {
             .footer {
                 padding: 14rem 0 .5rem;
             }
+            .footer-social {
+                display: flex;
+                gap: 20px;
+            }
             .copyright {
                 font-family: "Noto Sans TC", sans-serif;
                 font-size: .7rem;
+                padding: 0 .5em;
             }
         }
