@@ -55,7 +55,7 @@
         /* ======== hot ========*/
 .hot {
     background-color: #F9EFDE;
-    padding: 6rem 0 12rem;
+    padding: 2rem 0 12rem;
     position: relative;
 }
 .hot-dec {
@@ -253,7 +253,7 @@
 }
 @media (max-width: 568px) {
     .hot {
-        padding: 2rem 0 4rem;
+        padding: 1rem 0 4rem;
     }
         .hot-text h2 {
         font-size: 1.5rem;
