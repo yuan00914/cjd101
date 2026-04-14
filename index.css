@@ -1,482 +1,478 @@
+/* 淡入 */
+/* 初始狀態 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
 
-        /* ======== banner ========*/
-        .banner {
-            background: #F9EFDE url(pic2/index_banner.png) no-repeat center / cover;
-            min-height: 100vh;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            text-align: right;
-            padding-right: 10%;
-        }
-        .banner-txt {
-            font-family: "Kiwi Maru", serif;
-            letter-spacing: 0.1em;
-            color: #614D3B;
-            max-width: 500px;
-            width: 100%;
-        }
-        .banner-txt h1 {
-            font-size: 2.5rem;
-            padding-bottom: 1rem;
-        }
-        .banner-txt p {
-            font-size: 1.3rem;
-        }
+/* 進入畫面後 */
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-        @media (max-width: 768px) {
-            .banner {
-                background-image: url(pic2/index_mobile.png);
-                min-height: 80vh;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                padding: 0 5%;
-            }
-            .banner-txt {
-                padding: 0;
-            }
-            .banner-txt h1 {
-                font-size: 2rem;
-            }
-            .banner-txt p {
-                font-size: 1rem; 
-            }
-        }
-        @media (max-width: 568px) {
-            .banner-txt h1 {
-                font-size: 1.5rem;
-            }
-            .banner-txt p {
-                font-size: .9rem; 
-            }
-        }
+/* ======== banner ========*/
+.banner {
+  background: #f9efde url(pic2/index_banner.png) no-repeat center / cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+  padding-right: 10%;
+}
+.banner-txt {
+  letter-spacing: 0.1em;
+  color: #614d3b;
+  max-width: 500px;
+  width: 100%;
+}
+.banner-txt h1 {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+}
+.banner-txt p {
+  font-size: 1.3rem;
+}
 
-        /* ======== hot ========*/
+@media (max-width: 768px) {
+  .banner {
+    background-image: url(pic2/index_mobile.png);
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+  }
+  .banner-txt {
+    padding: 0;
+  }
+  .banner-txt h1 {
+    font-size: 2rem;
+  }
+  .banner-txt p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 568px) {
+  .banner-txt h1 {
+    font-size: 1.5rem;
+  }
+  .banner-txt p {
+    font-size: 0.9rem;
+  }
+}
+
+/* button */
+.btn-style {
+  width: 60px;
+  height: 60px;
+  background-color: #fbbd60;
+  color: #614d3b;
+  border-radius: 50%;
+  padding: 1em;
+  font-size: 1.5rem;
+  box-shadow: -4px 4px 0 0.5px rgba(183, 131, 89, 1);
+  transition: 0.3s;
+}
+.btn-style:hover {
+  background-color: #ed977d;
+  transform: translateY(-10px);
+  transition: 0.3s;
+}
+
+/* ======== hot ========*/
 .hot {
-    background-color: #F9EFDE;
-    padding: 2rem 0 12rem;
-    position: relative;
+  background-color: #f9efde;
+  padding: 2rem 0 12rem;
+  position: relative;
 }
 .hot-dec {
-    position: absolute;
-    bottom: -3px;
-    z-index: 1;
+  position: absolute;
+  bottom: -3px;
+  z-index: 1;
 }
 
 .hot-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  z-index: 2;
 }
 
 .hot-title {
-    max-width: 100%;
-    margin: 0 10%;
-    font-family: "Kiwi Maru", serif;
-    letter-spacing: 0.1em;
-    color: #614D3B;
-    position: relative;
-} 
+  max-width: 100%;
+  margin: 0 10%;
+  letter-spacing: 0.1em;
+  color: #614d3b;
+  position: relative;
+}
 
 .hot-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1em;
+  font-size: 2.5rem;
+  margin-bottom: 1em;
 }
 
 .hot-text p {
-    font-size: 1.3rem; 
-    line-height: 1.7;
+  font-size: 1.3rem;
+  line-height: 1.7;
 }
 
 .hot-button {
-    font-family: "Kiwi Maru", serif;
-    width: 60px;
-    height: 60px;
-    background-color: #FBBD60;
-    color: #614D3B;
-    border-radius: 50%;
-    padding: 1em;
-    font-size: 1.5rem;
-    box-shadow: -4px 4px 0 0.5px rgba(183, 131, 89, 1); 
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transition: 0.3s; 
-}
-.hot-button:hover {
-    background-color: #ED977D;
-    transform: translateY(-10px); 
-    transition: 0.3s; 
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
 }
 
 .hot-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    overflow: hidden;
-    max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+  max-width: 100%;
 }
 .hot-list {
-    width: auto;
-    display: flex; 
-    flex-wrap: nowrap;
-    gap: 30px;
-    overflow-x: hidden; 
-    padding-bottom: 15px; /* 為滾動條留出空間 */    
-    scrollbar-width: none; /* 隱藏 Firefox 滾動條 */    
-    -ms-overflow-style: none;  /* 隱藏 IE/Edge 滾動條 */
-    scroll-behavior: smooth; /* 平滑滾動 */
+  width: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 30px;
+  overflow-x: hidden;
+  padding-bottom: 15px; /* 為滾動條留出空間 */
+  scrollbar-width: none; /* 隱藏 Firefox 滾動條 */
+  -ms-overflow-style: none; /* 隱藏 IE/Edge 滾動條 */
+  scroll-behavior: smooth; /* 平滑滾動 */
 }
 .hot-list::-webkit-scrollbar {
-    display: none; /* 隱藏 Chrome/Safari 滾動條 */
+  display: none; /* 隱藏 Chrome/Safari 滾動條 */
 }
 
 .hot-class {
-    max-width: 330px;
-    width: 90%;
-    flex: 0 0 auto;
-    background-color: #fff; 
-    color: #614D3B;
-    border-radius: 24px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    overflow: hidden; 
-    transition: 0.3s; 
+  max-width: 330px;
+  width: 90%;
+  flex: 0 0 auto;
+  background-color: #fff;
+  color: #614d3b;
+  border-radius: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.3s;
 }
 .hot-class:hover {
-    transform: translateY(-10px); 
-    transition: 0.3s; 
+  transform: translateY(-10px);
+  transition: 0.3s;
 }
 
 .hot-class img {
-    width: 100%; 
-    height: 200px; 
-    object-fit: cover;
-    overflow: hidden;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .hot-pic-text {
-    font-family: "Kiwi Maru", serif;
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    font-size: 1rem;
-    line-height: 1.6;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+  gap: 15px;
 }
 .hot-pic-text h3 {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 .hot-nav-button {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    transition: 0.3s;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  transition: 0.3s;
 }
 .hot-nav-button:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
 }
 .hot-nav-button button:disabled {
-    display: none;
-    transition: 0.3s;
+  display: none;
+  transition: 0.3s;
 }
-
 
 @media (max-width: 1024px) {
-    .hot-list {
-        justify-content: flex-start;
-        padding: 0 20px;
-    }
-    .hot-wrapper {
-        flex-wrap: nowrap; 
-        justify-content: flex-start;
-        gap: 0 10px;
-        overflow-x: auto;
-        /* 允許水平滾動 (如果 hot-list 被擠壓) */
-    }
+  .hot-list {
+    justify-content: flex-start;
+    padding: 0 20px;
+  }
+  .hot-wrapper {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0 10px;
+    overflow-x: auto;
+    /* 允許水平滾動 (如果 hot-list 被擠壓) */
+  }
 }
 @media (max-width: 768px) {
-    .hot {
-        padding: 4rem 0 8rem;
-    }
-    .hot-title {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
-    .hot-button {
-        position: static; /* 取消絕對定位 */
-        margin-top: 20px; 
-    }
-    .hot-container {
-        gap: 20px;
-    }
-    .hot-text h2 {
-        font-size: 2rem;
-    }
-    .hot-text p {
-        font-size: 1rem;
-    }
-    .hot-button {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-    .hot-wrapper {
-        -webkit-overflow-scrolling: touch;
-        /* 提升手機滾動體驗 */
-        justify-content: flex-start;
-        /* 手機版通常靠左開始滾動 */
-        padding: 0;
-        width: 100%;
-    }
-    .hot-nav-button {
-        display: none; /* **手機版隱藏導覽按鈕，主要依靠手指滑動** */
-    }
-    .hot-list {
-        overflow-x: auto; 
-        padding: 5%;
-    }
-    .hot-pic-text {
-        font-size: 1rem;
-    }
+  .hot {
+    padding: 4rem 0 8rem;
+  }
+  .hot-title {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  .hot-button {
+    position: static; /* 取消絕對定位 */
+    margin-top: 20px;
+  }
+  .hot-container {
+    gap: 20px;
+  }
+  .hot-text h2 {
+    font-size: 2rem;
+  }
+  .hot-text p {
+    font-size: 1rem;
+  }
+  .hot-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  .hot-wrapper {
+    -webkit-overflow-scrolling: touch;
+    /* 提升手機滾動體驗 */
+    justify-content: flex-start;
+    /* 手機版通常靠左開始滾動 */
+    padding: 0;
+    width: 100%;
+  }
+  .hot-nav-button {
+    display: none; /* 手機版隱藏導覽按鈕，主要依靠手指滑動 */
+  }
+  .hot-list {
+    overflow-x: auto;
+    padding: 5%;
+  }
+  .hot-pic-text {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 568px) {
-    .hot {
-        padding: 1rem 0 4rem;
-    }
-        .hot-text h2 {
-        font-size: 1.5rem;
-    }
-    .hot-text p {
-        font-size: .9rem;
-    }
-    .hot-button {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
+  .hot {
+    padding: 1rem 0 4rem;
+  }
+  .hot-text h2 {
+    font-size: 1.5rem;
+  }
+  .hot-text p {
+    font-size: 0.9rem;
+  }
+  .hot-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }
 
-
-
-    /* ======== us ========*/
+/* ======== us ========*/
 .us {
-    background: url(pic/bgicon.svg) no-repeat center / cover;
-    padding: 6em 0;
+  background: url(pic/bgicon.svg) no-repeat center / cover;
+  padding: 6em 0;
 }
 .us-container {
-    max-width: 1200px;
-    margin: 0 auto 4rem;
-    display: flex; 
-    flex-flow: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 0 20px;
 }
 
 .us-pic {
-    flex: 1;
-    position: relative;
-    z-index: 2;
+  flex: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .us-text {
-    flex: 1;
-    padding: 2rem;
-    font-family: "Kiwi Maru", serif;
-    font-size: 1.3rem;
-    color: #614D3B;
-    padding: 2rem;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1;
+  flex: 1;
+  padding: 2rem;
+  font-size: 1.3rem;
+  color: #614d3b;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 .us-text::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: 0;
-    bottom: -20px;
-    left: -100px;
-    background-color: #F2E7D9;
-    border-radius: 24px;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 0;
+  bottom: -20px;
+  left: -100px;
+  background-color: #f2e7d9;
+  border-radius: 24px;
+  z-index: -1;
 }
 
 .us-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: .8em;
+  font-size: 2.5rem;
+  margin-bottom: 0.8em;
 }
 .us-text p {
-    max-width: 400px;
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
+  max-width: 400px;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
 }
 
 .us-button {
-    font-family: "Kiwi Maru", serif;
-    width: 60px;
-    height: 60px;
-    background-color: #FBBD60;
-    color: #614D3B;
-    border-radius: 50%;
-    padding: 1em;
-    font-size: 1.5rem;
-    box-shadow: -4px 4px 0 0.5px rgba(183, 131, 89, 1); 
-    transition: 0.3s; 
-}
-.us-button:hover {
-    background-color: #ED977D;
-    transform: translateY(-10px); 
-    transition: 0.3s; 
+  display: inline-block;
 }
 
 @media (max-width: 768px) {
-    .us {
-        padding: 2rem 0;
-    }
-    .us-container {
-        flex-direction: column; 
-        justify-content: center;
-        align-content: center;
-        gap: 20px;
-    }
-    .us-pic{
-        width: 80%;
-    }
-    .us-text {
-        margin: 1rem auto;
-        text-align: center;
-    }
-    .us-text::before {
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-    .us-text h2 {
-        font-size: 2rem;
-    }
-    .us-text p {
-        font-size: 1rem;
-        text-align: start;
-        margin-bottom: 0;
-    }
-    .us-button {
-        margin: 20px auto 0;
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
+  .us {
+    padding: 2rem 0;
+  }
+  .us-container {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+  }
+  .us-pic {
+    width: 80%;
+  }
+  .us-text {
+    margin: 1rem auto;
+    text-align: center;
+  }
+  .us-text::before {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .us-text h2 {
+    font-size: 2rem;
+  }
+  .us-text p {
+    font-size: 1rem;
+    text-align: start;
+    margin-bottom: 0;
+  }
+  .us-button {
+    margin: 20px auto 0;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 568px) {
-    .us-text h2 {
-        font-size: 1.5rem;
-    }
-    .us-text p {
-        font-size: .9rem;
-    }
-    .us-button {
-        margin: 10px auto 0;
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
+  .us-text h2 {
+    font-size: 1.5rem;
+  }
+  .us-text p {
+    font-size: 0.9rem;
+  }
+  .us-button {
+    margin: 10px auto 0;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }
 
-
-        /* ======== contact ========*/
+/* ======== contact ========*/
 .contact {
-    padding: 6em 6em 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 6em 6em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .contact-container {
-    max-width: 1200px;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
+  max-width: 1200px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
 }
-.contact-text{
-    font-family: "Kiwi Maru", serif;
-    color: #614D3B;
-    font-size: 1.3rem;
-    line-height: 1.6;
-    white-space: nowrap;
-    flex: 1 1 400px;
+.contact-text {
+  color: #614d3b;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  white-space: nowrap;
+  flex: 1 1 400px;
 }
 .contact-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 .map {
-    align-self: center;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 4px 4px 0 1px #ED977D;
-    flex: 1 1 500px;
-    min-width: 280px;
+  align-self: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 1px #ed977d;
+  flex: 1 1 500px;
+  min-width: 280px;
 }
 .map iframe {
-    width: 100%;
-    height: 400px;
-    display: block;
+  width: 100%;
+  height: 400px;
+  display: block;
 }
 @media (max-width: 768px) {
-    .contact {
-        padding: 4rem 0 0;
-    }
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .contact-text {
-        text-align: center;
-        white-space: nowrap;
-        flex: none;
-    }
-    .contact-text h2 {
-        font-size: 2rem;
-    }
-    .contact-text p {
-        font-size: 1rem;
-    }
-    .map {
-        width: 80%;
-        flex:none;
-    }
-    .map iframe {
-        height: 200px;
-    }
+  .contact {
+    padding: 4rem 0 0;
+  }
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-text {
+    text-align: center;
+    white-space: nowrap;
+    flex: none;
+  }
+  .contact-text h2 {
+    font-size: 2rem;
+  }
+  .contact-text p {
+    font-size: 1rem;
+  }
+  .map {
+    width: 80%;
+    flex: none;
+  }
+  .map iframe {
+    height: 200px;
+  }
 }
 @media (max-width: 568px) {
-    .contact {
-        padding: 4rem 0 0;
-    }
-    .contact-text{
-        margin: 0 10px;
-    }
-    .contact-text h2 {
-        font-size: 1.5rem;
-    }
-    .contact-text p {
-        font-size: .9rem;
-        text-align: start;
-    }
+  .contact {
+    padding: 4rem 0 0;
+  }
+  .contact-text {
+    margin: 0 10px;
+  }
+  .contact-text h2 {
+    font-size: 1.5rem;
+  }
+  .contact-text p {
+    font-size: 0.9rem;
+    text-align: start;
+  }
 }
